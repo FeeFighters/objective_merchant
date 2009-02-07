@@ -1,0 +1,5 @@
+h1. Objective Merchant
+
+This project is an open-source Objective-C port of the popular Shopify library for processing sales transactions in Ruby.
+
+It is sponsored by "Transparent Financial Services":http://transfs.com at "TransFS.com":http://transfs.com.
