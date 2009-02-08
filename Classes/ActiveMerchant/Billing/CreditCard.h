@@ -3,7 +3,7 @@
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/7/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 TransFS.com. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -75,12 +75,11 @@
 //# run validation on the passed in value if it is supplied
 @property(nonatomic, retain) NSString *verificationValue;
 
-- (ExpiryDate *) expiryDate;
+- (BillingExpiryDate *) expiryDate;
 - (bool) is_expired;
 - (bool) has_name;
-- (bool) has_first_name;
-- (bool) has_last_name;
-- (bool) has_last_name;
+- (bool) has_firstName;
+- (bool) has_lastName;
 - (NSString *) name;
 - (bool) has_verificationValue;
 - (NSString *) displayNumber;

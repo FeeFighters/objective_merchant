@@ -3,13 +3,13 @@
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 TransFS.com. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
 
-@interface ExpiryDate : NSObject {
+@interface BillingExpiryDate : NSObject {
 
 @protected
 	NSString *month;

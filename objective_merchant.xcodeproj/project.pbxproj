@@ -27,6 +27,14 @@
 		1D976B7F0F3EBCD900E77C6D /* ExpiryDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */; };
 		1D976B800F3EBCD900E77C6D /* ExpiryDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */; };
 		1D976C320F3ECA0700E77C6D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D976C310F3ECA0700E77C6D /* libicucore.dylib */; };
+		1D976C360F3ECB5B00E77C6D /* CvvResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976C340F3ECB5B00E77C6D /* CvvResult.h */; };
+		1D976C370F3ECB5B00E77C6D /* CvvResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976C350F3ECB5B00E77C6D /* CvvResult.m */; };
+		1D976CE50F3ED10E00E77C6D /* Gateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976CE30F3ED10E00E77C6D /* Gateway.h */; };
+		1D976CE60F3ED10E00E77C6D /* Gateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976CE40F3ED10E00E77C6D /* Gateway.m */; };
+		1D976CF80F3EE63200E77C6D /* CreditCardFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976CF60F3EE63200E77C6D /* CreditCardFormatting.h */; };
+		1D976CF90F3EE63200E77C6D /* CreditCardFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976CF70F3EE63200E77C6D /* CreditCardFormatting.m */; };
+		1D976D430F3EE87C00E77C6D /* RequiresParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976D410F3EE87C00E77C6D /* RequiresParameters.h */; };
+		1D976D440F3EE87C00E77C6D /* RequiresParameters_Implementation.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */; };
 		1DEBCC400F3E330E00AA742F /* MyFirstTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCC3F0F3E330E00AA742F /* MyFirstTest.m */; };
 		1DEBCCE80F3E40ED00AA742F /* AvsResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DEBCCE60F3E40ED00AA742F /* AvsResult.h */; };
 		1DEBCCE90F3E40ED00AA742F /* AvsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCCE70F3E40ED00AA742F /* AvsResult.m */; };
@@ -69,6 +77,14 @@
 		1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiryDate.h; sourceTree = "<group>"; };
 		1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiryDate.m; sourceTree = "<group>"; };
 		1D976C310F3ECA0700E77C6D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
+		1D976C340F3ECB5B00E77C6D /* CvvResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CvvResult.h; sourceTree = "<group>"; };
+		1D976C350F3ECB5B00E77C6D /* CvvResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CvvResult.m; sourceTree = "<group>"; };
+		1D976CE30F3ED10E00E77C6D /* Gateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gateway.h; sourceTree = "<group>"; };
+		1D976CE40F3ED10E00E77C6D /* Gateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gateway.m; sourceTree = "<group>"; };
+		1D976CF60F3EE63200E77C6D /* CreditCardFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardFormatting.h; sourceTree = "<group>"; };
+		1D976CF70F3EE63200E77C6D /* CreditCardFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardFormatting.m; sourceTree = "<group>"; };
+		1D976D410F3EE87C00E77C6D /* RequiresParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters.h; sourceTree = "<group>"; };
+		1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters_Implementation.h; sourceTree = "<group>"; };
 		1DEBCBF00F3E2FCE00AA742F /* objective_merchant_tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "objective_merchant_tests-Info.plist"; sourceTree = "<group>"; };
 		1DEBCC350F3E32F600AA742F /* objective_merchant_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = objective_merchant_tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBCC3E0F3E330E00AA742F /* MyFirstTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFirstTest.h; sourceTree = "<group>"; };
@@ -155,6 +171,8 @@
 				1DEBCCE20F3E40DF00AA742F /* ActiveMerchant */,
 				1D4A10730F3E946E00F61A30 /* NSStringAdditions.h */,
 				1D4A10740F3E946E00F61A30 /* NSStringAdditions.m */,
+				1D976D410F3EE87C00E77C6D /* RequiresParameters.h */,
+				1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -210,6 +228,12 @@
 				1D4A10F60F3EB1BD00F61A30 /* CreditCardMethods.m */,
 				1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */,
 				1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */,
+				1D976C340F3ECB5B00E77C6D /* CvvResult.h */,
+				1D976C350F3ECB5B00E77C6D /* CvvResult.m */,
+				1D976CE30F3ED10E00E77C6D /* Gateway.h */,
+				1D976CE40F3ED10E00E77C6D /* Gateway.m */,
+				1D976CF60F3EE63200E77C6D /* CreditCardFormatting.h */,
+				1D976CF70F3EE63200E77C6D /* CreditCardFormatting.m */,
 			);
 			path = Billing;
 			sourceTree = "<group>";
@@ -241,6 +265,10 @@
 				1D4A10750F3E946E00F61A30 /* NSStringAdditions.h in Headers */,
 				1D4A10F70F3EB1BD00F61A30 /* CreditCardMethods.h in Headers */,
 				1D976B7F0F3EBCD900E77C6D /* ExpiryDate.h in Headers */,
+				1D976C360F3ECB5B00E77C6D /* CvvResult.h in Headers */,
+				1D976CE50F3ED10E00E77C6D /* Gateway.h in Headers */,
+				1D976CF80F3EE63200E77C6D /* CreditCardFormatting.h in Headers */,
+				1D976D430F3EE87C00E77C6D /* RequiresParameters.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +388,10 @@
 				1D4A10760F3E946E00F61A30 /* NSStringAdditions.m in Sources */,
 				1D4A10F80F3EB1BD00F61A30 /* CreditCardMethods.m in Sources */,
 				1D976B800F3EBCD900E77C6D /* ExpiryDate.m in Sources */,
+				1D976C370F3ECB5B00E77C6D /* CvvResult.m in Sources */,
+				1D976CE60F3ED10E00E77C6D /* Gateway.m in Sources */,
+				1D976CF90F3EE63200E77C6D /* CreditCardFormatting.m in Sources */,
+				1D976D440F3EE87C00E77C6D /* RequiresParameters_Implementation.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

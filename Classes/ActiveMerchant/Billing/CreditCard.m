@@ -3,7 +3,7 @@
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/7/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 TransFS.com. All rights reserved.
 //
 
 #import "CreditCard.h"
@@ -19,9 +19,9 @@
 static bool _BillingCreditCard_requireVerificationValue = true;
 
 
-- (ExpiryDate *) expiryDate
+- (BillingExpiryDate *) expiryDate
 {
-	return [[ExpiryDate alloc] init:month year:year];
+	return [[BillingExpiryDate alloc] init:month year:year];
 }
 
 - (bool) is_expired
@@ -31,13 +31,13 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 
 - (bool) has_name
 {
-	return ([self has_first_name] && [self has_last_name]);
+	return ([self has_firstName] && [self has_lastName]);
 }
-- (bool) has_first_name
+- (bool) has_firstName
 {
 	return ![NSString is_blank:firstName];
 }
-- (bool) has_last_name
+- (bool) has_lastName
 {
 	return ![NSString is_blank:lastName];
 }

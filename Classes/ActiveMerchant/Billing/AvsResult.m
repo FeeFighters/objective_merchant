@@ -16,9 +16,9 @@
 //# http:// www.emsecommerce.net/avs_cvv2_response_codes.htm
 @implementation BillingAvsResult
 
-static NSDictionary* _BillingAvsResult_messages;
-static NSDictionary* _BillingAvsResult_postalMatchCodes;
-static NSDictionary* _BillingAvsResult_streetMatchCodes;
+static NSDictionary* _BillingAvsResult_messages = nil;
+static NSDictionary* _BillingAvsResult_postalMatchCodes = nil;
+static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 
 @synthesize code, message, streetMatch, postalMatch;
 
