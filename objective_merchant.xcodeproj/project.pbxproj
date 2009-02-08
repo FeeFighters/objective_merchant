@@ -9,15 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D4A0FAC0F3E793000F61A30 /* Errors.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A0FA90F3E793000F61A30 /* Errors.h */; };
 		1D4A0FAD0F3E793000F61A30 /* Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A0FAA0F3E793000F61A30 /* Errors.m */; };
-		1D4A0FAE0F3E793000F61A30 /* Validatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A0FAB0F3E793000F61A30 /* Validatable.h */; };
-		1D4A0FB00F3E794E00F61A30 /* Validatable_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A0FAF0F3E794E00F61A30 /* Validatable_Implementation.h */; };
-		1D4A0FDA0F3E7C3800F61A30 /* Validatable_Definitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A0FD90F3E7C3800F61A30 /* Validatable_Definitions.h */; };
 		1D4A106D0F3E8AEF00F61A30 /* CreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */; };
 		1D4A106E0F3E8AEF00F61A30 /* CreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */; };
-		1D4A10710F3E917B00F61A30 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A106F0F3E917B00F61A30 /* RegexKitLite.h */; };
-		1D4A10720F3E917B00F61A30 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A10700F3E917B00F61A30 /* RegexKitLite.m */; };
-		1D4A10750F3E946E00F61A30 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A10730F3E946E00F61A30 /* NSStringAdditions.h */; };
-		1D4A10760F3E946E00F61A30 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A10740F3E946E00F61A30 /* NSStringAdditions.m */; };
 		1D4A10F70F3EB1BD00F61A30 /* CreditCardMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */; };
 		1D4A10F80F3EB1BD00F61A30 /* CreditCardMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A10F60F3EB1BD00F61A30 /* CreditCardMethods.m */; };
 		1D88195D0F3E5E0200E607CD /* Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D88195B0F3E5E0200E607CD /* Base.h */; };
@@ -33,8 +26,19 @@
 		1D976CE60F3ED10E00E77C6D /* Gateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976CE40F3ED10E00E77C6D /* Gateway.m */; };
 		1D976CF80F3EE63200E77C6D /* CreditCardFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976CF60F3EE63200E77C6D /* CreditCardFormatting.h */; };
 		1D976CF90F3EE63200E77C6D /* CreditCardFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976CF70F3EE63200E77C6D /* CreditCardFormatting.m */; };
-		1D976D430F3EE87C00E77C6D /* RequiresParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976D410F3EE87C00E77C6D /* RequiresParameters.h */; };
-		1D976D440F3EE87C00E77C6D /* RequiresParameters_Implementation.h in Sources */ = {isa = PBXBuildFile; fileRef = 1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */; };
+		1D976EB20F3F5DF600E77C6D /* NSArrayAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */; };
+		1D976EB30F3F5DF600E77C6D /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */; };
+		1D976EB40F3F5DF600E77C6D /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */; };
+		1D976EB50F3F5DF600E77C6D /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */; };
+		1D976EB60F3F5DF600E77C6D /* RequiresParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EA80F3F5DF600E77C6D /* RequiresParameters.h */; };
+		1D976EB70F3F5DF600E77C6D /* RequiresParameters_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EA90F3F5DF600E77C6D /* RequiresParameters_Implementation.h */; };
+		1D976EB80F3F5DF600E77C6D /* Validatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EAA0F3F5DF600E77C6D /* Validatable.h */; };
+		1D976EB90F3F5DF600E77C6D /* Validatable_Definitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EAB0F3F5DF600E77C6D /* Validatable_Definitions.h */; };
+		1D976EBA0F3F5DF600E77C6D /* Validatable_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EAC0F3F5DF600E77C6D /* Validatable_Implementation.h */; };
+		1D976EBB0F3F5DF600E77C6D /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EAE0F3F5DF600E77C6D /* RegexKitLite.h */; };
+		1D976EBC0F3F5DF600E77C6D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976EAF0F3F5DF600E77C6D /* RegexKitLite.m */; };
+		1D976EBD0F3F5DF600E77C6D /* VarArgsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EB00F3F5DF600E77C6D /* VarArgsHelper.h */; };
+		1D976EBE0F3F5DF600E77C6D /* VarArgsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */; };
 		1DEBCC400F3E330E00AA742F /* MyFirstTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCC3F0F3E330E00AA742F /* MyFirstTest.m */; };
 		1DEBCCE80F3E40ED00AA742F /* AvsResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DEBCCE60F3E40ED00AA742F /* AvsResult.h */; };
 		1DEBCCE90F3E40ED00AA742F /* AvsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCCE70F3E40ED00AA742F /* AvsResult.m */; };
@@ -59,15 +63,8 @@
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1D4A0FA90F3E793000F61A30 /* Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Errors.h; sourceTree = "<group>"; };
 		1D4A0FAA0F3E793000F61A30 /* Errors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Errors.m; sourceTree = "<group>"; };
-		1D4A0FAB0F3E793000F61A30 /* Validatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validatable.h; sourceTree = "<group>"; };
-		1D4A0FAF0F3E794E00F61A30 /* Validatable_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validatable_Implementation.h; sourceTree = "<group>"; };
-		1D4A0FD90F3E7C3800F61A30 /* Validatable_Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validatable_Definitions.h; sourceTree = "<group>"; };
 		1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCard.h; sourceTree = "<group>"; };
 		1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCard.m; sourceTree = "<group>"; };
-		1D4A106F0F3E917B00F61A30 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		1D4A10700F3E917B00F61A30 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		1D4A10730F3E946E00F61A30 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
-		1D4A10740F3E946E00F61A30 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardMethods.h; sourceTree = "<group>"; };
 		1D4A10F60F3EB1BD00F61A30 /* CreditCardMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardMethods.m; sourceTree = "<group>"; };
 		1D88195B0F3E5E0200E607CD /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
@@ -83,9 +80,20 @@
 		1D976CE40F3ED10E00E77C6D /* Gateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gateway.m; sourceTree = "<group>"; };
 		1D976CF60F3EE63200E77C6D /* CreditCardFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardFormatting.h; sourceTree = "<group>"; };
 		1D976CF70F3EE63200E77C6D /* CreditCardFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardFormatting.m; sourceTree = "<group>"; };
-		1D976D410F3EE87C00E77C6D /* RequiresParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters.h; sourceTree = "<group>"; };
-		1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters_Implementation.h; sourceTree = "<group>"; };
 		1D976D860F3EEED700E77C6D /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditions.h; sourceTree = "<group>"; };
+		1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditions.m; sourceTree = "<group>"; };
+		1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		1D976EA80F3F5DF600E77C6D /* RequiresParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters.h; sourceTree = "<group>"; };
+		1D976EA90F3F5DF600E77C6D /* RequiresParameters_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters_Implementation.h; sourceTree = "<group>"; };
+		1D976EAA0F3F5DF600E77C6D /* Validatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validatable.h; sourceTree = "<group>"; };
+		1D976EAB0F3F5DF600E77C6D /* Validatable_Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validatable_Definitions.h; sourceTree = "<group>"; };
+		1D976EAC0F3F5DF600E77C6D /* Validatable_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validatable_Implementation.h; sourceTree = "<group>"; };
+		1D976EAE0F3F5DF600E77C6D /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		1D976EAF0F3F5DF600E77C6D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		1D976EB00F3F5DF600E77C6D /* VarArgsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarArgsHelper.h; sourceTree = "<group>"; };
+		1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarArgsHelper.m; sourceTree = "<group>"; };
 		1DEBCBF00F3E2FCE00AA742F /* objective_merchant_tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "objective_merchant_tests-Info.plist"; sourceTree = "<group>"; };
 		1DEBCC350F3E32F600AA742F /* objective_merchant_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = objective_merchant_tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBCC3E0F3E330E00AA742F /* MyFirstTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFirstTest.h; sourceTree = "<group>"; };
@@ -163,18 +171,12 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D4A106F0F3E917B00F61A30 /* RegexKitLite.h */,
-				1D4A10700F3E917B00F61A30 /* RegexKitLite.m */,
+				1D976EA20F3F5DF600E77C6D /* Additions */,
+				1D976EA70F3F5DF600E77C6D /* Protocols */,
+				1D976EAD0F3F5DF600E77C6D /* Utility */,
 				1D4A0FA90F3E793000F61A30 /* Errors.h */,
 				1D4A0FAA0F3E793000F61A30 /* Errors.m */,
-				1D4A0FAB0F3E793000F61A30 /* Validatable.h */,
-				1D4A0FD90F3E7C3800F61A30 /* Validatable_Definitions.h */,
-				1D4A0FAF0F3E794E00F61A30 /* Validatable_Implementation.h */,
 				1DEBCCE20F3E40DF00AA742F /* ActiveMerchant */,
-				1D4A10730F3E946E00F61A30 /* NSStringAdditions.h */,
-				1D4A10740F3E946E00F61A30 /* NSStringAdditions.m */,
-				1D976D410F3EE87C00E77C6D /* RequiresParameters.h */,
-				1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -196,6 +198,40 @@
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1D976EA20F3F5DF600E77C6D /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */,
+				1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */,
+				1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */,
+				1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		1D976EA70F3F5DF600E77C6D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1D976EA80F3F5DF600E77C6D /* RequiresParameters.h */,
+				1D976EA90F3F5DF600E77C6D /* RequiresParameters_Implementation.h */,
+				1D976EAA0F3F5DF600E77C6D /* Validatable.h */,
+				1D976EAB0F3F5DF600E77C6D /* Validatable_Definitions.h */,
+				1D976EAC0F3F5DF600E77C6D /* Validatable_Implementation.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1D976EAD0F3F5DF600E77C6D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1D976EAE0F3F5DF600E77C6D /* RegexKitLite.h */,
+				1D976EAF0F3F5DF600E77C6D /* RegexKitLite.m */,
+				1D976EB00F3F5DF600E77C6D /* VarArgsHelper.h */,
+				1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		1DEBCC200F3E329600AA742F /* Tests */ = {
@@ -259,18 +295,21 @@
 				1D88195D0F3E5E0200E607CD /* Base.h in Headers */,
 				1D8819630F3E62C800E607CD /* Check.h in Headers */,
 				1D4A0FAC0F3E793000F61A30 /* Errors.h in Headers */,
-				1D4A0FAE0F3E793000F61A30 /* Validatable.h in Headers */,
-				1D4A0FB00F3E794E00F61A30 /* Validatable_Implementation.h in Headers */,
-				1D4A0FDA0F3E7C3800F61A30 /* Validatable_Definitions.h in Headers */,
 				1D4A106D0F3E8AEF00F61A30 /* CreditCard.h in Headers */,
-				1D4A10710F3E917B00F61A30 /* RegexKitLite.h in Headers */,
-				1D4A10750F3E946E00F61A30 /* NSStringAdditions.h in Headers */,
 				1D4A10F70F3EB1BD00F61A30 /* CreditCardMethods.h in Headers */,
 				1D976B7F0F3EBCD900E77C6D /* ExpiryDate.h in Headers */,
 				1D976C360F3ECB5B00E77C6D /* CvvResult.h in Headers */,
 				1D976CE50F3ED10E00E77C6D /* Gateway.h in Headers */,
 				1D976CF80F3EE63200E77C6D /* CreditCardFormatting.h in Headers */,
-				1D976D430F3EE87C00E77C6D /* RequiresParameters.h in Headers */,
+				1D976EB20F3F5DF600E77C6D /* NSArrayAdditions.h in Headers */,
+				1D976EB40F3F5DF600E77C6D /* NSStringAdditions.h in Headers */,
+				1D976EB60F3F5DF600E77C6D /* RequiresParameters.h in Headers */,
+				1D976EB70F3F5DF600E77C6D /* RequiresParameters_Implementation.h in Headers */,
+				1D976EB80F3F5DF600E77C6D /* Validatable.h in Headers */,
+				1D976EB90F3F5DF600E77C6D /* Validatable_Definitions.h in Headers */,
+				1D976EBA0F3F5DF600E77C6D /* Validatable_Implementation.h in Headers */,
+				1D976EBB0F3F5DF600E77C6D /* RegexKitLite.h in Headers */,
+				1D976EBD0F3F5DF600E77C6D /* VarArgsHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,14 +425,15 @@
 				1D8819640F3E62C800E607CD /* Check.m in Sources */,
 				1D4A0FAD0F3E793000F61A30 /* Errors.m in Sources */,
 				1D4A106E0F3E8AEF00F61A30 /* CreditCard.m in Sources */,
-				1D4A10720F3E917B00F61A30 /* RegexKitLite.m in Sources */,
-				1D4A10760F3E946E00F61A30 /* NSStringAdditions.m in Sources */,
 				1D4A10F80F3EB1BD00F61A30 /* CreditCardMethods.m in Sources */,
 				1D976B800F3EBCD900E77C6D /* ExpiryDate.m in Sources */,
 				1D976C370F3ECB5B00E77C6D /* CvvResult.m in Sources */,
 				1D976CE60F3ED10E00E77C6D /* Gateway.m in Sources */,
 				1D976CF90F3EE63200E77C6D /* CreditCardFormatting.m in Sources */,
-				1D976D440F3EE87C00E77C6D /* RequiresParameters_Implementation.h in Sources */,
+				1D976EB30F3F5DF600E77C6D /* NSArrayAdditions.m in Sources */,
+				1D976EB50F3F5DF600E77C6D /* NSStringAdditions.m in Sources */,
+				1D976EBC0F3F5DF600E77C6D /* RegexKitLite.m in Sources */,
+				1D976EBE0F3F5DF600E77C6D /* VarArgsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

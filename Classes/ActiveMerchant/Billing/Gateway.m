@@ -186,4 +186,6 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 	return [NSString stringWithString:[result lowercaseString]];
 }
 
+#include "RequiresParameters_Implementation.h"
+
 @end

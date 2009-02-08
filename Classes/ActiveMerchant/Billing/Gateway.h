@@ -7,14 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "RequiresParameters.h"
 
-
-@interface BillingGateway : NSObject {
+@interface BillingGateway : NSObject <RequiresParameters> {
 
 @protected
 	NSMutableDictionary* options;
-	
-
 }
 
 @property(readonly) NSDictionary *options;
@@ -40,6 +38,5 @@
 
 + (bool) has_support_for:(NSString*)cardType;
 + (NSString *) cardBrand:(id)source;
-
 
 @end
