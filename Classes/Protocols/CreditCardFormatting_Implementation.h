@@ -9,9 +9,6 @@
 #import "CreditCardFormatting.h"
 #import "NSStringAdditions.h"
 
-
-@implementation BillingGateway (CreditCardFormatting)
-
 //# This method is used to format numerical information pertaining to credit cards. 
 //# 
 //#   format(2005, :two_digits)  # => "05"
@@ -33,4 +30,3 @@
 	return number;
 }
 
-@end

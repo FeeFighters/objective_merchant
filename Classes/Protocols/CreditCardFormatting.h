@@ -7,9 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Gateway.h"
 
-@interface BillingGateway (CreditCardFormatting)
+@protocol CreditCardFormatting
 
 - (NSString *) format:(NSString*)number option:(NSString*)option;
 

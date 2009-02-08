@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CreditCardFormatting.h"
 #import "RequiresParameters.h"
 
-@interface BillingGateway : NSObject <RequiresParameters> {
+@interface BillingGateway : NSObject <RequiresParameters, CreditCardFormatting> {
 
 @protected
 	NSMutableDictionary* options;

@@ -7,7 +7,6 @@
 //
 
 #import "Gateway.h"
-#import "CreditCardFormatting.h"
 #import "Base.h"
 #import "NSStringAdditions.h"
 
@@ -187,5 +186,6 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 }
 
 #include "RequiresParameters_Implementation.h"
+#include "CreditCardFormatting.h"
 
 @end
