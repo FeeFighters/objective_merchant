@@ -3,7 +3,7 @@
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/7/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 TransFS.com. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -21,18 +21,13 @@
 	NSString *message;
 	NSString *streetMatch;
 	NSString *postalMatch;	
-	
-@private
-	NSDictionary *_messages;
-	NSDictionary *_postalMatchCodes;
-	NSDictionary *_streetMatchCodes;
 }
 
 // attr_reader :code, :message, :street_match, :postal_match
-@property(nonatomic, retain) NSString *code;
-@property(nonatomic, retain) NSString *message;
-@property(nonatomic, retain) NSString *streetMatch;
-@property(nonatomic, retain) NSString *postalMatch;
+@property(readonly) NSString *code;
+@property(readonly) NSString *message;
+@property(readonly) NSString *streetMatch;
+@property(readonly) NSString *postalMatch;
 
 - (id) initWithCode:(NSString*)code streetMatch:(NSString*)streetMatch postalMatch:(NSString*)postalMatch;
 - (id) initWithCode:(NSString*)code streetMatch:(NSString*)streetMatch;
