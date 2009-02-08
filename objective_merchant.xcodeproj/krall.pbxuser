@@ -4,7 +4,6 @@
 		activeBuildConfigurationName = Debug;
 		activeTarget = 8DC2EF4F0486A6940098B216 /* objective_merchant */;
 		addToTargets = (
-			8DC2EF4F0486A6940098B216 /* objective_merchant */,
 		);
 		breakpoints = (
 		);

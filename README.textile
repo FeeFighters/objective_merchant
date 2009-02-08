@@ -1,5 +1,9 @@
 h1. Objective Merchant
 
-This project is an open-source Objective-C port of the popular Shopify library for processing sales transactions in Ruby.
+This project is an open-source Objective-C port of the popular "Shopify":http://github.com/Shopify library, "active_merchant":http://www.activemerchant.org , which enables developers to process sales transactions in Ruby.
+
+The goal of the project is to duplicate as much of the core functionality from active_merchant as possible, but using Objective-C standards and design guidelines.
+
+_Initially, a limited number of processing gateways will be supported... mostly like Authorize.Net and Paypal._
 
 It is sponsored by "Transparent Financial Services":http://transfs.com at "TransFS.com":http://transfs.com.

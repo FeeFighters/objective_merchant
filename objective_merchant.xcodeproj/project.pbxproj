@@ -85,6 +85,7 @@
 		1D976CF70F3EE63200E77C6D /* CreditCardFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardFormatting.m; sourceTree = "<group>"; };
 		1D976D410F3EE87C00E77C6D /* RequiresParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters.h; sourceTree = "<group>"; };
 		1D976D420F3EE87C00E77C6D /* RequiresParameters_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiresParameters_Implementation.h; sourceTree = "<group>"; };
+		1D976D860F3EEED700E77C6D /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		1DEBCBF00F3E2FCE00AA742F /* objective_merchant_tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "objective_merchant_tests-Info.plist"; sourceTree = "<group>"; };
 		1DEBCC350F3E32F600AA742F /* objective_merchant_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = objective_merchant_tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBCC3E0F3E330E00AA742F /* MyFirstTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFirstTest.h; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		0867D691FE84028FC02AAC07 /* objective_merchant */ = {
 			isa = PBXGroup;
 			children = (
+				1D976D860F3EEED700E77C6D /* README.textile */,
 				1DEBCC200F3E329600AA742F /* Tests */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
