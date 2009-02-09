@@ -1,5 +1,5 @@
 //
-//  CreditCardFormatting.h
+//  Utils.h
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/8/09.
@@ -8,9 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NSStringAdditions.h"
+#import "NSDataAdditions.h"
 
-@protocol CreditCardFormatting
+@protocol Utils
 
-- (NSString *) format:(NSString*)number option:(NSString*)option;
+- (NSString *) generateUniqueId;
 
 @end

@@ -186,6 +186,8 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 }
 
 #include "RequiresParameters_Implementation.h"
-#include "CreditCardFormatting.h"
+#include "CreditCardFormatting_Implementation.h"
+#include "PostsData_Implementation.h"
+#include "Utils_Implementation.h"
 
 @end

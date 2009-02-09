@@ -17,6 +17,8 @@
 		1D88195E0F3E5E0200E607CD /* Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D88195C0F3E5E0200E607CD /* Base.m */; };
 		1D8819630F3E62C800E607CD /* Check.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D8819610F3E62C800E607CD /* Check.h */; };
 		1D8819640F3E62C800E607CD /* Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8819620F3E62C800E607CD /* Check.m */; };
+		1D9060BE0F3F7F2C00C211A1 /* PostsData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9060BC0F3F7F2C00C211A1 /* PostsData.h */; };
+		1D9060C10F3F7F4C00C211A1 /* PostsData_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9060C00F3F7F4C00C211A1 /* PostsData_Implementation.h */; };
 		1D976B7F0F3EBCD900E77C6D /* ExpiryDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */; };
 		1D976B800F3EBCD900E77C6D /* ExpiryDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */; };
 		1D976C320F3ECA0700E77C6D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D976C310F3ECA0700E77C6D /* libicucore.dylib */; };
@@ -39,6 +41,10 @@
 		1D976EBE0F3F5DF600E77C6D /* VarArgsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */; };
 		1D976ECB0F3F642300E77C6D /* CreditCardFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EC90F3F642300E77C6D /* CreditCardFormatting.h */; };
 		1D976ECE0F3F645600E77C6D /* CreditCardFormatting_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976ECD0F3F645600E77C6D /* CreditCardFormatting_Implementation.h */; };
+		1D976EEC0F3F6B3900E77C6D /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EEA0F3F6B3900E77C6D /* Utils.h */; };
+		1D976EED0F3F6B3900E77C6D /* Utils_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976EEB0F3F6B3900E77C6D /* Utils_Implementation.h */; };
+		1D976F040F3F75A800E77C6D /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976F020F3F75A800E77C6D /* NSDataAdditions.h */; };
+		1D976F050F3F75A800E77C6D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976F030F3F75A800E77C6D /* NSDataAdditions.m */; };
 		1DEBCC400F3E330E00AA742F /* MyFirstTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCC3F0F3E330E00AA742F /* MyFirstTest.m */; };
 		1DEBCCE80F3E40ED00AA742F /* AvsResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DEBCCE60F3E40ED00AA742F /* AvsResult.h */; };
 		1DEBCCE90F3E40ED00AA742F /* AvsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCCE70F3E40ED00AA742F /* AvsResult.m */; };
@@ -71,6 +77,8 @@
 		1D88195C0F3E5E0200E607CD /* Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base.m; sourceTree = "<group>"; };
 		1D8819610F3E62C800E607CD /* Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Check.h; sourceTree = "<group>"; };
 		1D8819620F3E62C800E607CD /* Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Check.m; sourceTree = "<group>"; };
+		1D9060BC0F3F7F2C00C211A1 /* PostsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsData.h; sourceTree = "<group>"; };
+		1D9060C00F3F7F4C00C211A1 /* PostsData_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsData_Implementation.h; sourceTree = "<group>"; };
 		1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiryDate.h; sourceTree = "<group>"; };
 		1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiryDate.m; sourceTree = "<group>"; };
 		1D976C310F3ECA0700E77C6D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
@@ -94,6 +102,10 @@
 		1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarArgsHelper.m; sourceTree = "<group>"; };
 		1D976EC90F3F642300E77C6D /* CreditCardFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardFormatting.h; sourceTree = "<group>"; };
 		1D976ECD0F3F645600E77C6D /* CreditCardFormatting_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardFormatting_Implementation.h; sourceTree = "<group>"; };
+		1D976EEA0F3F6B3900E77C6D /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		1D976EEB0F3F6B3900E77C6D /* Utils_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils_Implementation.h; sourceTree = "<group>"; };
+		1D976F020F3F75A800E77C6D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		1D976F030F3F75A800E77C6D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		1DEBCBF00F3E2FCE00AA742F /* objective_merchant_tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "objective_merchant_tests-Info.plist"; sourceTree = "<group>"; };
 		1DEBCC350F3E32F600AA742F /* objective_merchant_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = objective_merchant_tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBCC3E0F3E330E00AA742F /* MyFirstTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFirstTest.h; sourceTree = "<group>"; };
@@ -207,6 +219,8 @@
 				1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */,
 				1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */,
 				1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */,
+				1D976F020F3F75A800E77C6D /* NSDataAdditions.h */,
+				1D976F030F3F75A800E77C6D /* NSDataAdditions.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -214,13 +228,17 @@
 		1D976EA70F3F5DF600E77C6D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1D976ECD0F3F645600E77C6D /* CreditCardFormatting_Implementation.h */,
+				1D976EEA0F3F6B3900E77C6D /* Utils.h */,
+				1D976EEB0F3F6B3900E77C6D /* Utils_Implementation.h */,
 				1D976EC90F3F642300E77C6D /* CreditCardFormatting.h */,
+				1D976ECD0F3F645600E77C6D /* CreditCardFormatting_Implementation.h */,
 				1D976EA80F3F5DF600E77C6D /* RequiresParameters.h */,
 				1D976EA90F3F5DF600E77C6D /* RequiresParameters_Implementation.h */,
 				1D976EAA0F3F5DF600E77C6D /* Validatable.h */,
 				1D976EAB0F3F5DF600E77C6D /* Validatable_Definitions.h */,
 				1D976EAC0F3F5DF600E77C6D /* Validatable_Implementation.h */,
+				1D9060BC0F3F7F2C00C211A1 /* PostsData.h */,
+				1D9060C00F3F7F4C00C211A1 /* PostsData_Implementation.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -311,6 +329,11 @@
 				1D976EBD0F3F5DF600E77C6D /* VarArgsHelper.h in Headers */,
 				1D976ECB0F3F642300E77C6D /* CreditCardFormatting.h in Headers */,
 				1D976ECE0F3F645600E77C6D /* CreditCardFormatting_Implementation.h in Headers */,
+				1D976EEC0F3F6B3900E77C6D /* Utils.h in Headers */,
+				1D976EED0F3F6B3900E77C6D /* Utils_Implementation.h in Headers */,
+				1D976F040F3F75A800E77C6D /* NSDataAdditions.h in Headers */,
+				1D9060BE0F3F7F2C00C211A1 /* PostsData.h in Headers */,
+				1D9060C10F3F7F4C00C211A1 /* PostsData_Implementation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +457,7 @@
 				1D976EB50F3F5DF600E77C6D /* NSStringAdditions.m in Sources */,
 				1D976EBC0F3F5DF600E77C6D /* RegexKitLite.m in Sources */,
 				1D976EBE0F3F5DF600E77C6D /* VarArgsHelper.m in Sources */,
+				1D976F050F3F75A800E77C6D /* NSDataAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

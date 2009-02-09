@@ -1,5 +1,5 @@
 //
-//  CreditCardFormatting.h
+//  NSDataAdditions.h
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/8/09.
@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NSStringAdditions.h"
 
-@protocol CreditCardFormatting
 
-- (NSString *) format:(NSString*)number option:(NSString*)option;
+@interface NSData (TransFSAdditions)
+
+- (NSString*) md5ToString;
 
 @end

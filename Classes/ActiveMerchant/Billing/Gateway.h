@@ -9,8 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "CreditCardFormatting.h"
 #import "RequiresParameters.h"
+#import "PostsData.h"
+#import "Utils.h"
 
-@interface BillingGateway : NSObject <RequiresParameters, CreditCardFormatting> {
+@interface BillingGateway : NSObject <RequiresParameters, CreditCardFormatting, PostsData, Utils> {
 
 @protected
 	NSMutableDictionary* options;

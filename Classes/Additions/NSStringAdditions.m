@@ -8,7 +8,6 @@
 
 #import "NSStringAdditions.h"
 
-
 @implementation NSString (RubyAdditions)
 
 - (bool) is_blank
@@ -20,6 +19,5 @@
 {
 	return (str==nil || [str is_blank]);
 }
-
 
 @end
