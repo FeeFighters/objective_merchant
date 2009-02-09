@@ -15,8 +15,8 @@
 
 
 typedef enum BillingModesEnum {
-	TEST = 0,
-	PRODUCTION
+	Test = 0,
+	Production
 } BillingModes;
 
 + (BillingModes) gatewayMode;

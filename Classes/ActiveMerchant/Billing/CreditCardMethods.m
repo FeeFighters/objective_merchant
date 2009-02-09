@@ -13,27 +13,25 @@
 
 @implementation BillingCreditCard (Methods)
 
-- (bool) is_validMonth:(NSString *)_month
+- (bool) is_validMonth:(NSInteger)_month
 {
-	int monthVal = [_month intValue];
-	return (monthVal >= 1 && monthVal <= 12);
+	return (_month >= 1 && _month <= 12);
 }
-- (bool) is_validExpiryYear:(NSString *)_year
+- (bool) is_validExpiryYear:(NSInteger)_year
 {
 	NSDate *today = [NSDate date];
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	NSDateComponents *dateComponents = [gregorian components:(NSDayCalendarUnit) fromDate:today];
 	int todayYear = [dateComponents year];
-	int _yearVal = [_year intValue];
-	return (_yearVal >= todayYear && _yearVal <= (todayYear + 20));
+	return (_year >= todayYear && _year <= (todayYear + 20));
 }
-- (bool) is_validStartYear:(NSString *)_year
+- (bool) is_validStartYear:(NSInteger)_year
 {
-	return ([_year isMatchedByRegex:@"^\\d{4}$"] && ([_year intValue] > 1987));
+	return ([[NSString stringWithFormat:@"%d", _year] isMatchedByRegex:@"^\\d{4}$"] && (_year > 1987));
 }
-- (bool) is_validIssueNumber:(NSString *)_number
+- (bool) is_validIssueNumber:(NSInteger)_number
 {
-	return [_number isMatchedByRegex:@"^\\d{1,2}$"];
+	return [[NSString stringWithFormat:@"%d", _number] isMatchedByRegex:@"^\\d{1,2}$"];
 }
 
 

@@ -46,34 +46,34 @@
 
 @protected
 	NSMutableString *number;
-	NSMutableString *month;
-	NSMutableString *year;
+	NSInteger month;
+	NSInteger year;
 	NSMutableString *type;
 	NSMutableString *firstName;
 	NSMutableString *lastName;
-	NSMutableString *startMonth;
-	NSMutableString *startYear;
-	NSMutableString *issueNumber;
+	NSInteger startMonth;
+	NSInteger startYear;
+	NSInteger issueNumber;
 	NSMutableString *verificationValue;
 
 #include "Validatable_Definitions.h"	
 }
 
-@property(nonatomic, retain) NSString *number;
-@property(nonatomic, retain) NSString *month;
-@property(nonatomic, retain) NSString *year;
-@property(nonatomic, retain) NSString *type;
-@property(nonatomic, retain) NSString *firstName;
-@property(nonatomic, retain) NSString *lastName;
+@property(nonatomic, retain) NSMutableString *number;
+@property(assign) NSInteger month;
+@property(assign) NSInteger year;
+@property(nonatomic, retain) NSMutableString *type;
+@property(nonatomic, retain) NSMutableString *firstName;
+@property(nonatomic, retain) NSMutableString *lastName;
 
 //# Required for Switch / Solo cards
-@property(nonatomic, retain) NSString *startMonth;
-@property(nonatomic, retain) NSString *startYear;
-@property(nonatomic, retain) NSString *issueNumber;
+@property(assign) NSInteger startMonth;
+@property(assign) NSInteger startYear;
+@property(assign) NSInteger issueNumber;
 
 //# Optional verification_value (CVV, CVV2 etc). Gateways will try their best to 
 //# run validation on the passed in value if it is supplied
-@property(nonatomic, retain) NSString *verificationValue;
+@property(nonatomic, retain) NSMutableString *verificationValue;
 
 - (BillingExpiryDate *) expiryDate;
 - (bool) is_expired;

@@ -15,6 +15,26 @@
 @synthesize options;
 
 //
+// Public
+//
+
+- (id) init:(NSDictionary *)options
+{
+	return self;
+}
+
+- (NSString *) cardBrand:(id)source
+{
+	return [BillingGateway cardBrand:source];
+}
+		
+- (bool) is_test
+{
+	return ([BillingBase gatewayMode] == Test);
+}
+
+
+//
 // Private
 //
 
@@ -26,7 +46,7 @@
 - (NSString *)amount:(id)money
 {
 	if (money==nil) return nil;
-
+	
 	id cents = money;
 	if ([money respondsToSelector:@selector(cents)])
 		cents = [money performSelector:@selector(cents)];
@@ -60,25 +80,6 @@
 	return false;
 }
 
-
-//
-// Public
-//
-
-- (id) init:(NSDictionary *)options
-{
-	return self;
-}
-
-- (NSString *) cardBrand:(id)source
-{
-	return [BillingGateway cardBrand:source];
-}
-		
-- (bool) is_test
-{
-	return ([BillingBase gatewayMode] == TEST);
-}
 
 
 //

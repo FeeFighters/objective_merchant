@@ -12,14 +12,14 @@
 @interface BillingExpiryDate : NSObject {
 
 @protected
-	NSString *month;
-	NSString *year;
+	NSInteger month;
+	NSInteger year;
 }
 
-@property(nonatomic, retain) NSString *month;
-@property(nonatomic, retain) NSString *year;
+@property(assign) NSInteger month;
+@property(assign) NSInteger year;
 
-- (id) init:(NSString *)month year:(NSString *)year;
+- (id) init:(NSInteger)month year:(NSInteger)year;
 - (bool) is_expired;
 - (NSDate *) expiration;
 

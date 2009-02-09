@@ -11,9 +11,9 @@
 
 @implementation BillingBase
 
-static BillingModes _BillingBase_mode = PRODUCTION;
-static BillingModes _BillingBase_gatewayMode = PRODUCTION;
-static BillingModes _BillingBase_integrationMode = PRODUCTION;
+static BillingModes _BillingBase_mode = Production;
+static BillingModes _BillingBase_gatewayMode = Production;
+static BillingModes _BillingBase_integrationMode = Production;
 
 + (BillingModes) gatewayMode
 {
@@ -49,7 +49,7 @@ static BillingModes _BillingBase_integrationMode = PRODUCTION;
 
 + (bool)is_test_mode
 {
-	return (_BillingBase_gatewayMode == TEST);
+	return (_BillingBase_gatewayMode == Test);
 }
 
 @end

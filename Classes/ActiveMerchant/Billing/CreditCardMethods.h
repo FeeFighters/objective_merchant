@@ -11,10 +11,10 @@
 
 @interface BillingCreditCard (Methods)
 
-- (bool) is_validMonth:(NSString *)month;
-- (bool) is_validExpiryYear:(NSString *)year;
-- (bool) is_validStartYear:(NSString *)year;
-- (bool) is_validIssueNumber:(NSString *)number;
+- (bool) is_validMonth:(NSInteger)month;
+- (bool) is_validExpiryYear:(NSInteger)year;
+- (bool) is_validStartYear:(NSInteger)year;
+- (bool) is_validIssueNumber:(NSInteger)number;
 
 + (bool) is_validNumber:(NSString *)number;
 + (NSDictionary *)cardCompanies;

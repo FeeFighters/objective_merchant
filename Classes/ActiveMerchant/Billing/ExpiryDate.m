@@ -26,10 +26,10 @@
 //
 // Public
 //
-- (id) init:(NSString *)_month year:(NSString *)_year
+- (id) init:(NSInteger)_month year:(NSInteger)_year
 {
-	month = [NSString stringWithString:_month];
-	year = [NSString stringWithString:_year];
+	month = _month;
+	year = _year;
 	return self;
 }
 
@@ -41,7 +41,7 @@
 
 - (NSDate *) expiration
 {
-	return [NSDate dateWithString:[NSString stringWithFormat:@"%s-%s-%s 23:59:59 +0000", year, month, [self monthDays]]];
+	return [NSDate dateWithString:[NSString stringWithFormat:@"%04d-%02d-%02d 23:59:59 +0000", year, month, [self monthDays]]];
 }
 
 

@@ -24,6 +24,17 @@
 - (NSString *) cardBrand:(id)source;
 - (bool) is_test;
 
+//
+// "Private" methods
+//
+- (NSString*) name;
+- (NSString *) amount:(id)money;
+- (NSString *) currency:(id)money;
+- (bool) requiresStartDateOrIssueNumber:(NSString *)creditCard;
+
+//
+// Class methods
+//
 + (NSString *) moneyFormat;
 + (void) setMoneyFormat:(NSString *)format;
 + (NSString *) defaultCurrency;
