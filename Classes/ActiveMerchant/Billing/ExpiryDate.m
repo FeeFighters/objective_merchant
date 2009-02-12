@@ -26,7 +26,7 @@
 //
 // Public
 //
-- (id) init:(NSInteger)_month year:(NSInteger)_year
+- (id) init:(NSNumber*)_month year:(NSNumber*)_year
 {
 	month = _month;
 	year = _year;
@@ -36,12 +36,13 @@
 - (bool) is_expired
 {
 	NSDate *today = [NSDate date];
-	return [today isGreaterThan:[self expiration]];
+	NSDate *_exp = [self expiration];	
+	return [today isGreaterThan:_exp];
 }
 
 - (NSDate *) expiration
 {
-	return [NSDate dateWithString:[NSString stringWithFormat:@"%04d-%02d-%02d 23:59:59 +0000", year, month, [self monthDays]]];
+	return [NSDate dateWithString:[NSString stringWithFormat:@"%04d-%02d-%02d 23:59:59 +0000", [year intValue], [month intValue], [self monthDays]]];
 }
 
 

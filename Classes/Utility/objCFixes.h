@@ -9,4 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 static id nilToNull(id value) { return value ? value : [NSNull null]; }
-#define NSBool(_X_) ((_X_) ? (id)kCFBooleanTrue : (id)kCFBooleanFalse)
+#define MakeBool(_X_) ((_X_) ? (id)kCFBooleanTrue : (id)kCFBooleanFalse)
+#define MakeInt(_X_) [NSNumber numberWithInt:_X_]
+#define MakeFloat(_X_) [NSNumber numberWithFloat:_X_]
+#define MakeStr(_X_) [NSString stringWithString:_X_]

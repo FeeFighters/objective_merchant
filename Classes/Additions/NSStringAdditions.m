@@ -17,7 +17,15 @@
 
 + (bool) is_blank:(NSString *)str
 {
-	return (str==nil || [str is_blank]);
+	return (str==nil || [str isKindOfClass:[NSNull class]] || [str is_blank]);
+}
+
+- (NSString *) capitalizeFirstLetter
+{
+	return [NSString stringWithFormat:@"%@%@", 
+				[[self substringWithRange:NSMakeRange(0, 1)] uppercaseString],
+				[self substringWithRange:NSMakeRange(1, [self length]-1)]
+			];
 }
 
 @end

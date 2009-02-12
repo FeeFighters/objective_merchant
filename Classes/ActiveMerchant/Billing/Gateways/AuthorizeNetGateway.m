@@ -36,9 +36,9 @@
 //
 - (id) init:(NSMutableDictionary *)_options
 {
-	[self requires:options, @"login", @"password", nil];
+	[self requires:_options, @"login", @"password", nil];
 	options = _options;
-	return [super init:options];
+	return [super init:_options];
 }
 
 //# Performs an authorization, which reserves the funds on the customer's credit card, but does not
@@ -188,7 +188,8 @@
 	[parameters setObject:([options objectForKey:@"test"] ? @"TRUE" : @"FALSE") forKey:@"testRequest"];
 	
 	NSString *url = [self is_test] ? [[self class] testUrl] : [[self class] liveUrl];
-	NSString *data = [self sslPost:url data:[self postData:action parameters:parameters] headers:[NSMutableDictionary alloc]];
+	NSString *postDataParms = [self postData:action parameters:parameters];
+	NSString *data = [self sslPost:url data:postDataParms headers:[[NSMutableDictionary alloc] init]];
 	
 	NSDictionary *response = [self parse:data];
 	
@@ -202,9 +203,9 @@
 	bool testMode = [self is_test] || [message isMatchedByRegex:@"TESTMODE"];
 	
 	NSDictionary *optionshash = [NSDictionary dictionaryWithObjectsAndKeys:
-								 NSBool(testMode), @"test",
+								 MakeBool(testMode), @"test",
 								 nilToNull([response objectForKey:@"transactionId"]), @"authorization",
-								 NSBool([self is_fraudReview:response]), @"fraudReview",
+								 MakeBool([self is_fraudReview:response]), @"fraudReview",
 								 nilToNull([NSDictionary dictionaryWithObjectsAndKeys:[response objectForKey:@"avsResultCode"], @"code"]), @"avsResult",
 								 nilToNull([response objectForKey:@"cardCode"]), @"cvvResult"
 								 ];
@@ -237,7 +238,8 @@
 								 nilToNull(action), @"type",
 								 @"TRUE", @"delim_data",
 								 @",", @"delim_char",
-								 @"$", @"encap_char"
+								 @"$", @"encap_char",
+								 nil
 								 ];
 	
 	[post addEntriesFromDictionary:parameters];
@@ -248,9 +250,11 @@
 	enumerator = [post keyEnumerator];
 	while (curKey = [enumerator nextObject]) {
 		NSString *curObj = [post objectForKey:curKey];
-		[requestArray addObject:[NSString stringWithFormat:@"x_%s=%s", curKey, [curObj stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+		if (![NSString is_blank:curObj])
+			[requestArray addObject:[NSString stringWithFormat:@"x_%@=%@", curKey, [curObj stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 	}
-	return [NSString stringWithString:[requestArray componentsJoinedByString:@"&"]];
+	NSString *joinedStr = [requestArray componentsJoinedByString:@"&"];
+	return joinedStr;
 }
 
 
@@ -348,8 +352,8 @@
 
 - (NSString*) expdate:(BillingCreditCard*)creditcard
 {
-	NSString *year = [NSString stringWithFormat:@"%.4i", [creditcard year]];
-	return [NSString stringWithFormat:@"%.2i%s", [creditcard month], [year substringWithRange:NSMakeRange([year length]-3, 2)]];
+	NSString *year = [NSString stringWithFormat:@"%.4i", [[creditcard year] intValue]];
+	return [NSString stringWithFormat:@"%.2i%@", [[creditcard month] intValue], [year substringWithRange:NSMakeRange([year length]-3, 2)]];
 }
 
 

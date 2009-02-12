@@ -41,35 +41,35 @@
 //#   cc.valid? # => true
 //#   cc.display_number # => XXXX-XXXX-XXXX-4242
 //#
-@interface BillingCreditCard : NSObject 
+@interface BillingCreditCard : NSObject  <Validatable>
 {
 
 @protected
 	NSMutableString *number;
-	NSInteger month;
-	NSInteger year;
+	NSNumber* month;
+	NSNumber* year;
 	NSMutableString *type;
 	NSMutableString *firstName;
 	NSMutableString *lastName;
-	NSInteger startMonth;
-	NSInteger startYear;
-	NSInteger issueNumber;
+	NSNumber* startMonth;
+	NSNumber* startYear;
+	NSNumber* issueNumber;
 	NSMutableString *verificationValue;
 
 #include "Validatable_Definitions.h"	
 }
 
 @property(nonatomic, retain) NSMutableString *number;
-@property(assign) NSInteger month;
-@property(assign) NSInteger year;
+@property(nonatomic, retain) NSNumber* month;
+@property(nonatomic, retain) NSNumber* year;
 @property(nonatomic, retain) NSMutableString *type;
 @property(nonatomic, retain) NSMutableString *firstName;
 @property(nonatomic, retain) NSMutableString *lastName;
 
 //# Required for Switch / Solo cards
-@property(assign) NSInteger startMonth;
-@property(assign) NSInteger startYear;
-@property(assign) NSInteger issueNumber;
+@property(nonatomic, retain) NSNumber* startMonth;
+@property(nonatomic, retain) NSNumber* startYear;
+@property(nonatomic, retain) NSNumber* issueNumber;
 
 //# Optional verification_value (CVV, CVV2 etc). Gateways will try their best to 
 //# run validation on the passed in value if it is supplied

@@ -13,5 +13,6 @@
 
 - (bool) is_blank;
 + (bool) is_blank:(NSString *)str;
+- (NSString *) capitalizeFirstLetter;
 
 @end

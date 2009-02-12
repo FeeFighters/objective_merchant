@@ -13,25 +13,25 @@
 
 @implementation BillingCreditCard (Methods)
 
-- (bool) is_validMonth:(NSInteger)_month
+- (bool) is_validMonth:(NSNumber*)_month
 {
-	return (_month >= 1 && _month <= 12);
+	return ([_month intValue] >= 1 && [_month intValue] <= 12);
 }
-- (bool) is_validExpiryYear:(NSInteger)_year
+- (bool) is_validExpiryYear:(NSNumber*)_year
 {
 	NSDate *today = [NSDate date];
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSDateComponents *dateComponents = [gregorian components:(NSDayCalendarUnit) fromDate:today];
+	NSDateComponents *dateComponents = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:today];
 	int todayYear = [dateComponents year];
-	return (_year >= todayYear && _year <= (todayYear + 20));
+	return ([_year intValue] >= todayYear && [_year intValue] <= (todayYear + 20));
 }
-- (bool) is_validStartYear:(NSInteger)_year
+- (bool) is_validStartYear:(NSNumber*)_year
 {
-	return ([[NSString stringWithFormat:@"%d", _year] isMatchedByRegex:@"^\\d{4}$"] && (_year > 1987));
+	return ([[NSString stringWithFormat:@"%d", [_year intValue]] isMatchedByRegex:@"^\\d{4}$"] && ([_year intValue] > 1987));
 }
-- (bool) is_validIssueNumber:(NSInteger)_number
+- (bool) is_validIssueNumber:(NSNumber*)_number
 {
-	return [[NSString stringWithFormat:@"%d", _number] isMatchedByRegex:@"^\\d{1,2}$"];
+	return [[NSString stringWithFormat:@"%d", [_number intValue]] isMatchedByRegex:@"^\\d{1,2}$"];
 }
 
 
@@ -89,18 +89,18 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 	if (_BillingCreditCard_cardCompanies==nil)
 	{
 	_BillingCreditCard_cardCompanies = [NSDictionary dictionaryWithObjectsAndKeys:	
-										@"visa", @"^4\\d{12}(\\d{3})?$",
-										@"master", @"^(5[1-5]\\d{4}|677189)\\d{10}$",
-										@"discover", @"^(6011|65\\d{2})\\d{12}$",
-										@"american_express", @"^3[47]\\d{13}$",
-										@"diners_club", @"^3(0[0-5]|[68]\\d)\\d{11}$",
-										@"jcb", @"^3528\\d{12}$",
-										@"switch", @"^6759\\d{12}(\\d{2,3})?$",
-										@"solo", @"^6767\\d{12}(\\d{2,3})?$",
-										@"dankort", @"^5019\\d{12}$",
-										@"maestro", @"^(5[06-8]|6\\d)\\d{10,17}$",
-										@"forbrugsforeningen", @"^600722\\d{10}$",
-										@"laser", @"^(6304[89]\\d{11}(\\d{2,3})?|670695\\d{13})$",
+										@"^4\\d{12}(\\d{3})?$", @"visa", 
+										@"^(5[1-5]\\d{4}|677189)\\d{10}$", @"master", 
+										@"^(6011|65\\d{2})\\d{12}$", @"discover", 
+										@"^3[47]\\d{13}$", @"american_express", 
+										@"^3(0[0-5]|[68]\\d)\\d{11}$", @"diners_club", 
+										@"^3528\\d{12}$", @"jcb", 
+										@"^6759\\d{12}(\\d{2,3})?$", @"switch", 
+										@"^6767\\d{12}(\\d{2,3})?$", @"solo", 
+										@"^5019\\d{12}$", @"dankort", 
+										@"^(5[06-8]|6\\d)\\d{10,17}$", @"maestro", 
+										@"^600722\\d{10}$", @"forbrugsforeningen", 
+										@"^(6304[89]\\d{11}(\\d{2,3})?|670695\\d{13})$", @"laser", 
 										nil];
 	}
 	return _BillingCreditCard_cardCompanies;
@@ -138,7 +138,7 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 
 + (NSString *)mask:(NSString *)number
 {
-	return [NSString stringWithFormat:@"XXXX-XXXX-XXXX-%s", [BillingCreditCard lastDigits:number]];
+	return [NSString stringWithFormat:@"XXXX-XXXX-XXXX-%@", [BillingCreditCard lastDigits:number]];
 }
 
 + (bool) is_matchingType:(NSString *)number type:(NSString *)type

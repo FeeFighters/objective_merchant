@@ -12,19 +12,20 @@
 	NSString *key;
 	NSEnumerator *enumerator = [_attributes keyEnumerator];
 	while (key = [enumerator nextObject]) {
-		NSString *selectorName = [NSString stringWithFormat:@"set%s", [key capitalizedString]];
-		[self performSelector:NSSelectorFromString(selectorName) withObject:[_attributes objectForKey:key]];		
+		NSString *selectorName = [NSString stringWithFormat:@"set%@:", [key capitalizeFirstLetter]];
+		id val = [_attributes objectForKey:key];
+		[self performSelector:NSSelectorFromString(selectorName) withObject:val];					
 	}		
 }
 
 - (bool) is_valid
 {
-	[(NSMutableDictionary *)_errors removeAllObjects];
+	[(NSMutableDictionary *)[self errors] removeAllObjects];
 	if ([self respondsToSelector:NSSelectorFromString(@"beforeValidate")])
 		[self performSelector:NSSelectorFromString(@"beforeValidate")];
 	if ([self respondsToSelector:NSSelectorFromString(@"validate")])
 		[self performSelector:NSSelectorFromString(@"validate")];
-	return ([_errors count] == 0);
+	return ([[self errors] count] == 0);
 }
 
 - (id) init:(NSDictionary*)attributes

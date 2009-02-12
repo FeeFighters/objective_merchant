@@ -9,9 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface Errors : NSMutableDictionary {
-
+@interface Errors : NSObject
+{
 @private
+	NSMutableDictionary *realDict;
 	id base;
 }
 
@@ -20,5 +21,12 @@
 - (void) add:(NSString *)field error:(NSString*)error;
 - (void) addToBase:(NSString*)error;
 - (NSArray*) fullMessages;
+
+- (void)removeObjectForKey:(id)aKey;
+- (void)setObject:(id)anObject forKey:(id)aKey;
+- (NSUInteger)count;
+- (id)objectForKey:(id)aKey;
+- (NSEnumerator *)keyEnumerator;
+- (void)removeAllObjects;
 
 @end

@@ -13,6 +13,7 @@
 
 - (id) init:(id)_base
 {
+	realDict = [[NSMutableDictionary alloc] init];
 	base = _base;
 	return self;
 }
@@ -52,11 +53,32 @@
 		if ([key isEqualToString:@"base"]) {
 			 errormsg = [NSString stringWithString:[curArray objectAtIndex:0]];
 		} else {
-			 errormsg = [NSString stringWithFormat:@"%s %s", key, [curArray objectAtIndex:0]];			
+			 errormsg = [NSString stringWithFormat:@"%@ %@", key, [curArray objectAtIndex:0]];			
 		}
 		[errors addObject:errormsg];
 	}
 	return errors;
+}
+
+
+
+- (void)removeObjectForKey:(id)aKey {
+	[realDict removeObjectForKey:aKey]; 
+}
+- (void)setObject:(id)anObject forKey:(id)aKey {
+	[realDict setObject:anObject forKey:aKey]; 
+}
+- (NSUInteger)count {
+	return [realDict count]; 
+}
+- (id)objectForKey:(id)aKey {
+	return [realDict objectForKey:aKey];
+}
+- (NSEnumerator *)keyEnumerator {
+	return [realDict keyEnumerator];
+}
+- (void)removeAllObjects {
+	[realDict removeAllObjects];
 }
 
 @end

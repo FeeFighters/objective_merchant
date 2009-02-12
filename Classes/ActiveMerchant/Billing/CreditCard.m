@@ -43,7 +43,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 }
 - (NSString *) name
 {
-	return [NSString stringWithFormat:@"%s %s", firstName, lastName];
+	return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
 }
 
 - (bool) has_verificationValue
@@ -66,7 +66,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 //
 - (void) beforeValidate
 {
-	[number replaceOccurrencesOfRegex:@"[^\\d]" withString:@""];
+	int count = [number replaceOccurrencesOfRegex:@"[^0-9]" withString:@""];
 	if ([NSString is_blank:type]) {
 		type = [NSString stringWithString:[BillingCreditCard getType:number]];
 	} else {
@@ -78,7 +78,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 	if ([NSString is_blank:type])
 		[_errors add:@"type" error:@"is required"];
 
-	if ([[BillingCreditCard cardCompanies] objectForKey:type]!=nil)
+	if ([[BillingCreditCard cardCompanies] objectForKey:type]==nil)
 		[_errors add:@"type" error:@"is invalid"];
 }
 - (void) validateCardNumber
@@ -102,7 +102,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 }
 - (void) validateVerificationValue
 {
-	if ([BillingCreditCard requiresVerificationValue])
+	if ([BillingCreditCard requiresVerificationValue] && [NSString is_blank:verificationValue])
 		[_errors add:@"verificationValue" error:@"is required"];						
 }
 - (void) validateSwitchOrSoloAttributes
