@@ -7,6 +7,7 @@
 //
 
 #import "AvsResult.h"
+#import "objCFixes.h"
 
 //# Implements the Address Verification System
 //# https:// www.wellsfargo.com/downloads/pdf/biz/merchant/visa_avs.pdf
@@ -48,9 +49,9 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 {
 	return [self initWithCode:a_code streetMatch:nil postalMatch:nil];
 }
-- (id) init
+- (id) init:(NSDictionary*)_attrs
 {
-	return [self initWithCode:nil streetMatch:nil postalMatch:nil];
+	return [self initWithCode:[_attrs objectForKey:@"code"] streetMatch:[_attrs objectForKey:@"streetMatch"] postalMatch:[_attrs objectForKey:@"postalMatch"]];
 }
 
 + (NSDictionary*)messages
@@ -58,32 +59,32 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 	if (_BillingAvsResult_messages==nil)
 	{
 		_BillingAvsResult_messages = [NSDictionary dictionaryWithObjectsAndKeys:
-						@"A", @"Street address matches, but 5-digit and 9-digit postal code do not match.",
-						@"B", @"Street address matches, but postal code not verified.",
-						@"C", @"Street address and postal code do not match.",
-						@"D", @"Street address and postal code match.",
-						@"E", @"AVS data is invalid or AVS is not allowed for this card type.",
-						@"F", @"Card member’s name does not match, but billing postal code matches.",
-						@"G", @"Non-U.S. issuing bank does not support AVS.",
-						@"H", @"Card member’s name does not match. Street address and postal code match.",
-						@"I", @"Address not verified.",
-						@"J", @"Card member’s name, billing address, and postal code match. Shipping information verified and chargeback protection guaranteed through the Fraud Protection Program.",
-						@"K", @"Card member’s name matches but billing address and billing postal code do not match.",
-						@"L", @"Card member’s name and billing postal code match, but billing address does not match.",
-						@"M", @"Street address and postal code match.",
-						@"N", @"Street address and postal code do not match.",
-						@"O", @"Card member’s name and billing address match, but billing postal code does not match.",
-						@"P", @"Postal code matches, but street address not verified.",
-						@"Q", @"Card member’s name, billing address, and postal code match. Shipping information verified but chargeback protection not guaranteed.",
-						@"R", @"System unavailable.",
-						@"S", @"U.S.-issuing bank does not support AVS.",
-						@"T", @"Card member’s name does not match, but street address matches.",
-						@"U", @"Address information unavailable.",
-						@"V", @"Card member’s name, billing address, and billing postal code match.",
-						@"W", @"Street address does not match, but 9-digit postal code matches.",
-						@"X", @"Street address and 9-digit postal code match.",
-						@"Y", @"Street address and 5-digit postal code match.",
-						@"Z", @"Street address does not match, but 5-digit postal code matches.",
+						@"Street address matches, but 5-digit and 9-digit postal code do not match.", @"A", 
+						@"Street address matches, but postal code not verified.", @"B", 
+						@"Street address and postal code do not match.", @"C", 
+						@"Street address and postal code match.", @"D", 
+						@"AVS data is invalid or AVS is not allowed for this card type.", @"E", 
+						@"Card member’s name does not match, but billing postal code matches.", @"F", 
+						@"Non-U.S. issuing bank does not support AVS.", @"G", 
+						@"Card member’s name does not match. Street address and postal code match.", @"H", 
+						@"Address not verified.", @"I", 
+						@"Card member’s name, billing address, and postal code match. Shipping information verified and chargeback protection guaranteed through the Fraud Protection Program.", @"J", 
+						@"Card member’s name matches but billing address and billing postal code do not match.", @"K", 
+						@"Card member’s name and billing postal code match, but billing address does not match.", @"L", 
+						@"Street address and postal code match.", @"M", 
+						@"Street address and postal code do not match.", @"N", 
+						@"Card member’s name and billing address match, but billing postal code does not match.", @"O", 
+						@"Postal code matches, but street address not verified.", @"P", 
+						@"Card member’s name, billing address, and postal code match. Shipping information verified but chargeback protection not guaranteed.", @"Q", 
+						@"System unavailable.", @"R", 
+						@"U.S.-issuing bank does not support AVS.", @"S", 
+						@"Card member’s name does not match, but street address matches.", @"T", 
+						@"Address information unavailable.", @"U", 
+						@"Card member’s name, billing address, and billing postal code match.", @"V", 
+						@"Street address does not match, but 9-digit postal code matches.", @"W", 
+						@"Street address and 9-digit postal code match.", @"X", 
+						@"Street address and 5-digit postal code match.", @"Y", 
+						@"Street address does not match, but 5-digit postal code matches.", @"Z", 
 						nil];			
 	}
 	return _BillingAvsResult_messages;
@@ -97,10 +98,10 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 		//'N' => %w( A C K N O ),
 		//'X' => %w( G S ),
 		//nil => %w( B E I R T U )
-		NSArray *_y_codes = [NSArray arrayWithObjects: @"D",@"H",@"F",@"H",@"J",@"L",@"M",@"P",@"Q",@"V",@"W",@"X",@"Y",@"Z"];
-		NSArray *_n_codes = [NSArray arrayWithObjects: @"A",@"C",@"K",@"N",@"O"];
-		NSArray *_x_codes = [NSArray arrayWithObjects: @"G",@"S"];		
-		NSArray *_nil_codes = [NSArray arrayWithObjects: @"B",@"E",@"I",@"R",@"T",@"U"];
+		NSArray *_y_codes = [NSArray arrayWithObjects: @"D",@"H",@"F",@"H",@"J",@"L",@"M",@"P",@"Q",@"V",@"W",@"X",@"Y",@"Z", nil];
+		NSArray *_n_codes = [NSArray arrayWithObjects: @"A",@"C",@"K",@"N",@"O", nil];
+		NSArray *_x_codes = [NSArray arrayWithObjects: @"G",@"S", nil];		
+		NSArray *_nil_codes = [NSArray arrayWithObjects: @"B",@"E",@"I",@"R",@"T",@"U", nil];
 
 		_BillingAvsResult_postalMatchCodes = [[NSMutableDictionary alloc] init];
 		
@@ -120,7 +121,7 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 		}
 		enumerator = [_nil_codes objectEnumerator];
 		while (currentCode = [enumerator nextObject]) {
-			[(NSMutableDictionary*)_BillingAvsResult_postalMatchCodes setObject:nil forKey:currentCode];
+			[(NSMutableDictionary*)_BillingAvsResult_postalMatchCodes setObject:nilToNull(nil) forKey:currentCode];
 		}
 	}
 	return _BillingAvsResult_postalMatchCodes;
@@ -134,10 +135,10 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 		//'N' => %w( C K L N P W Z ),
 		//'X' => %w( G S ),
 		//nil => %w( E F I R U )
-		NSArray *_y_codes = [NSArray arrayWithObjects: @"A",@"B",@"D",@"H",@"J",@"M",@"O",@"Q",@"T",@"V",@"X",@"Y"];
-		NSArray *_n_codes = [NSArray arrayWithObjects: @"C",@"K",@"L",@"N",@"P",@"W",@"Z"];
-		NSArray *_x_codes = [NSArray arrayWithObjects: @"G",@"S"];		
-		NSArray *_nil_codes = [NSArray arrayWithObjects: @"E",@"F",@"I",@"R",@"U"];
+		NSArray *_y_codes = [NSArray arrayWithObjects: @"A",@"B",@"D",@"H",@"J",@"M",@"O",@"Q",@"T",@"V",@"X",@"Y", nil];
+		NSArray *_n_codes = [NSArray arrayWithObjects: @"C",@"K",@"L",@"N",@"P",@"W",@"Z", nil];
+		NSArray *_x_codes = [NSArray arrayWithObjects: @"G",@"S", nil];		
+		NSArray *_nil_codes = [NSArray arrayWithObjects: @"E",@"F",@"I",@"R",@"U", nil];
 		
 		_BillingAvsResult_streetMatchCodes = [[NSMutableDictionary alloc] init];
 		
@@ -157,7 +158,7 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 		}
 		enumerator = [_nil_codes objectEnumerator];
 		while (currentCode = [enumerator nextObject]) {
-			[(NSMutableDictionary*)_BillingAvsResult_streetMatchCodes setObject:nil forKey:currentCode];
+			[(NSMutableDictionary*)_BillingAvsResult_streetMatchCodes setObject:nilToNull(nil) forKey:currentCode];
 		}
 	}
 	return _BillingAvsResult_streetMatchCodes;
@@ -166,10 +167,10 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 - (NSDictionary*)toDictionary
 {
 	return [NSDictionary dictionaryWithObjectsAndKeys:	
-			@"code", code,
-			@"message", message,
-			@"streetMatch", streetMatch,
-			@"postalMatch", postalMatch,
+			code, @"code", 
+			message, @"message", 
+			streetMatch, @"streetMatch", 
+			postalMatch, @"postalMatch", 
 			nil];			
 }
 

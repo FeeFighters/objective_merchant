@@ -22,11 +22,11 @@
 	return self;
 }
 
-- (NSDictionary *) to_dictionary
+- (NSDictionary *) toDictionary
 {
 	return [NSDictionary dictionaryWithObjectsAndKeys:	
-			@"code", code,
-			@"message", message,
+			code, @"code", 
+			message, @"message", 
 			nil];
 }
 
@@ -37,14 +37,14 @@ static NSDictionary* _BillingCvvResult_messages = nil;
 	if (_BillingCvvResult_messages==nil)
 	{
 		_BillingCvvResult_messages = [NSDictionary dictionaryWithObjectsAndKeys:	
-											@"D", @"Suspicious transaction",
-											@"I", @"Failed data validation check",
-											@"M", @"Match",
-											@"N", @"No Match",
-											@"P", @"Not Processed",
-											@"S", @"Should have been present",
-											@"U", @"Issuer unable to process request",
-											@"X", @"Card does not support verification",
+											@"Suspicious transaction", @"D", 
+											@"Failed data validation check", @"I", 
+											@"Match", @"M", 
+											@"No Match", @"N", 
+											@"Not Processed", @"P", 
+											@"Should have been present", @"S", 
+											@"Issuer unable to process request", @"U", 
+											@"Card does not support verification", @"X", 
 											nil];
 	}
 	return _BillingCvvResult_messages;

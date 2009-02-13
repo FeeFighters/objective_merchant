@@ -6,51 +6,46 @@
 //  Copyright 2009 TransFS.com. All rights reserved.
 //
 
+#import "objCFixes.h"
 
 - (NSString*) sslPost:(NSString *)url data:(NSString *)data headers:(NSMutableDictionary*)headers
 {
 	[headers setObject:@"application/x-www-form-urlencoded" forKey:@"Content-Type"];
 	
-	CFURLRef myURL = CFURLCreateWithString(kCFAllocatorDefault, (CFStringRef)url, NULL);
-	
-	CFStringRef requestMethod = CFSTR("POST");
-	CFHTTPMessageRef myRequest = CFHTTPMessageCreateRequest(kCFAllocatorDefault, requestMethod, myURL,
-															kCFHTTPVersion1_1);
-	
-	CFStringRef headerFieldName = CFSTR("Content-Type");
-	CFStringRef headerFieldValue = CFSTR("application/x-www-form-urlencoded");
-	CFHTTPMessageSetHeaderFieldValue(myRequest, headerFieldName, headerFieldValue);
-	CFHTTPMessageSetBody(myRequest, (CFDataRef)[data UTF8String]);
+	NSURL *myURL = [NSURL URLWithString:url];
 
-	CFReadStreamRef myReadStream = CFReadStreamCreateForHTTPRequest(kCFAllocatorDefault, myRequest);
-	
-	NSDictionary *sslSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-								 (NSString *)kCFStreamSocketSecurityLevelNegotiatedSSL, kCFStreamSSLLevel,
-								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredCertificates,
-								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredRoots,
-								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsAnyRoot,
-								 [NSNumber numberWithBool:NO], kCFStreamSSLValidatesCertificateChain,
-								 [NSNull null], kCFStreamSSLPeerName,
-								 nil];
-	CFReadStreamSetProperty(myReadStream, kCFStreamPropertySSLSettings, sslSettings);
-	CFReadStreamSetProperty(myReadStream, kCFStreamPropertyHTTPShouldAutoredirect, kCFBooleanTrue);
-	
-	CFReadStreamOpen(myReadStream);
+	NSMutableURLRequest *myRequest = [NSMutableURLRequest requestWithURL:myURL];
 
-	CFHTTPMessageRef myResponse = (CFHTTPMessageRef)CFReadStreamCopyProperty(myReadStream, kCFStreamPropertyHTTPResponseHeader);	
-	//CFStringRef myStatusLine = CFHTTPMessageCopyResponseStatusLine(myResponse);
-	//UInt32 myErrCode = CFHTTPMessageGetResponseStatusCode(myResponse);	
+	NSString* curKey;
+	NSEnumerator *enumerator = [headers keyEnumerator];
+	while (curKey = [enumerator nextObject]) {
+		[myRequest addValue:nilToNull([headers objectForKey:curKey]) forHTTPHeaderField:curKey];
+	}
 
-	CFDataRef myBody = CFHTTPMessageCopyBody(myResponse);
-	NSString *body = [[NSString alloc] initWithBytes:CFDataGetBytePtr(myBody) length:CFDataGetLength(myBody)];
+	[myRequest setHTTPMethod:@"POST"];
+	[myRequest setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
 	
-	CFRelease(myURL);
-	CFRelease(myRequest);
-	CFRelease(myReadStream);	
-	CFRelease(myResponse);		
-	//CFRelease(myStatusLine);
-	CFRelease(myBody);
-	[sslSettings release];
+//	NSDictionary *sslSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+//								 (NSString *)kCFStreamSocketSecurityLevelNegotiatedSSL, kCFStreamSSLLevel,
+//								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredCertificates,
+//								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredRoots,
+//								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsAnyRoot,
+//								 [NSNumber numberWithBool:NO], kCFStreamSSLValidatesCertificateChain,
+//								 [NSNull null], kCFStreamSSLPeerName,
+//								 nil];
+//	CFReadStreamSetProperty(myReadStream, kCFStreamPropertySSLSettings, sslSettings);
+//	CFReadStreamSetProperty(myReadStream, kCFStreamPropertyHTTPShouldAutoredirect, kCFBooleanTrue);
+
+	NSURLResponse *myResponse = nil;
+	NSError *error = nil;
+	NSData *responseData = [NSURLConnection sendSynchronousRequest:myRequest returningResponse:&myResponse error:&error];
+	NSString *body = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	
+	[myURL release];
+	[myRequest release];
+	[myResponse release];
+	[responseData release];
+	//[sslSettings release];
 	
 	return body;
 }

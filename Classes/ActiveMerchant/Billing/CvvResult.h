@@ -20,7 +20,7 @@
 @property(readonly) NSString *message;
 
 - (id) init:(NSString *)code;
-- (NSDictionary *) to_dictionary;
+- (NSDictionary *) toDictionary;
 
 + (NSDictionary *) messages;
 

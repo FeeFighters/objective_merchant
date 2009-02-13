@@ -32,7 +32,7 @@
 - (id) initWithCode:(NSString*)code streetMatch:(NSString*)streetMatch postalMatch:(NSString*)postalMatch;
 - (id) initWithCode:(NSString*)code streetMatch:(NSString*)streetMatch;
 - (id) initWithCode:(NSString*)code;
-- (id) init;
+- (id) init:(NSDictionary*)attrs;
 - (NSDictionary*)toDictionary;
 
 + (NSDictionary*)messages;

@@ -25,6 +25,7 @@
 - (void) addAddress:(NSMutableDictionary*)post options:(NSDictionary*)_options;
 - (NSString*) expdate:(BillingCreditCard*)creditcard;
 - (BillingResponse*) commit:(NSString*)action money:(id)money parameters:(NSMutableDictionary*)parameters;
+- (NSArray *) split:(NSString*)data;
 @end
 
 
@@ -206,8 +207,9 @@
 								 MakeBool(testMode), @"test",
 								 nilToNull([response objectForKey:@"transactionId"]), @"authorization",
 								 MakeBool([self is_fraudReview:response]), @"fraudReview",
-								 nilToNull([NSDictionary dictionaryWithObjectsAndKeys:[response objectForKey:@"avsResultCode"], @"code"]), @"avsResult",
-								 nilToNull([response objectForKey:@"cardCode"]), @"cvvResult"
+								 nilToNull([NSDictionary dictionaryWithObjectsAndKeys:[response objectForKey:@"avsResultCode"], @"code", nil]), @"avsResult",
+								 nilToNull([response objectForKey:@"cardCode"]), @"cvvResult",
+								 nil
 								 ];
 	BillingResponse *ret = [[BillingResponse alloc] init:[self is_success:response] message:message params:response options:optionshash];
 	return ret;
@@ -215,7 +217,7 @@
 
 - (NSDictionary*) parse:(NSString*)body
 {
-	NSArray *fields = [body componentsSeparatedByRegex:@"\\s+"];
+	NSArray *fields = [self split:body];
 	
 	NSDictionary *results = [NSDictionary dictionaryWithObjectsAndKeys:
 							 nilToNull([fields objectAtIndex:ResponseCode]),		@"responseCode",
@@ -223,9 +225,15 @@
 							 nilToNull([fields objectAtIndex:ResponseReasonText]),	@"responseReasonText",	
 							 nilToNull([fields objectAtIndex:AvsResultCode]),		@"avsResultCode",	
 							 nilToNull([fields objectAtIndex:TransactionId]),		@"transactionId",	
-							 nilToNull([fields objectAtIndex:CardCodeResponseCode]),	@"cardCode"
+							 nilToNull([fields objectAtIndex:CardCodeResponseCode]),	@"cardCode",
+							 nil
 							 ];
 	return results;
+}
+
+- (NSArray *) split:(NSString*)data
+{
+	return [[data substringWithRange:NSMakeRange(1, [data length]-2)] componentsSeparatedByRegex:@"\\$,\\$"];
 }
 
 - (NSString*) postData:(NSString*)action parameters:(NSDictionary*)parameters
@@ -273,7 +281,7 @@
 		return @"";
 	
 	NSString *s = [results objectForKey:@"responseReasonText"];
-	return [s substringToIndex:([s length] - 3)];
+	return [s substringToIndex:([s length] - 1)];
 }
 
 
