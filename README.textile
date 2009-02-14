@@ -6,6 +6,8 @@ The goal of the project is to duplicate as much of the core functionality from a
 
 _Initially, a limited number of processing gateways will be supported... mostly likely Authorize.Net and Paypal._
 
+It is sponsored by "Transparent Financial Services":http://transfs.com at "TransFS.com":http://transfs.com.
+
 h2. Authorize.Net Example
 
 Here is a basic example of how to use this library with the Authorize.Net gateway:
@@ -42,5 +44,3 @@ Here is a basic example of how to use this library with the Authorize.Net gatewa
 	}
 </code>
 </pre>
-
-It is sponsored by "Transparent Financial Services":http://transfs.com at "TransFS.com":http://transfs.com.
