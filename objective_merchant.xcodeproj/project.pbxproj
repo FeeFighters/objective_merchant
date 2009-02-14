@@ -52,6 +52,7 @@
 		1D976EBE0F3F5DF600E77C6D /* VarArgsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */; };
 		1D976F040F3F75A800E77C6D /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976F020F3F75A800E77C6D /* NSDataAdditions.h */; };
 		1D976F050F3F75A800E77C6D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976F030F3F75A800E77C6D /* NSDataAdditions.m */; };
+		1DCE22430F46775400F2FE6F /* Authorize.Net.Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE22240F4672A200F2FE6F /* Authorize.Net.Test.plist */; };
 		1DEBCCE80F3E40ED00AA742F /* AvsResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DEBCCE60F3E40ED00AA742F /* AvsResult.h */; };
 		1DEBCCE90F3E40ED00AA742F /* AvsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBCCE70F3E40ED00AA742F /* AvsResult.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -119,6 +120,8 @@
 		1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarArgsHelper.m; sourceTree = "<group>"; };
 		1D976F020F3F75A800E77C6D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		1D976F030F3F75A800E77C6D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		1DCE22240F4672A200F2FE6F /* Authorize.Net.Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Authorize.Net.Test.plist; sourceTree = "<group>"; };
+		1DCE22910F467D2900F2FE6F /* Authorize.Net.Test.Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Authorize.Net.Test.Sample.plist; sourceTree = "<group>"; };
 		1DEBCBF00F3E2FCE00AA742F /* objective_merchant_tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "objective_merchant_tests-Info.plist"; sourceTree = "<group>"; };
 		1DEBCC350F3E32F600AA742F /* objective_merchant_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = objective_merchant_tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBCCE60F3E40ED00AA742F /* AvsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvsResult.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 		1D9063600F40E85000C211A1 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				1DCE22910F467D2900F2FE6F /* Authorize.Net.Test.Sample.plist */,
+				1DCE22240F4672A200F2FE6F /* Authorize.Net.Test.plist */,
 				1D9063690F40E88A00C211A1 /* AuthorizeNetTest.h */,
 				1D90636A0F40E88A00C211A1 /* AuthorizeNetTest.m */,
 			);
@@ -438,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCE22430F46775400F2FE6F /* Authorize.Net.Test.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +602,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

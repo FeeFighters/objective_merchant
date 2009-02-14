@@ -11,6 +11,8 @@
 
 @interface AuthorizeNetTest : SenTestCase {
 
+	NSMutableDictionary *authorizeNetOptions;
+	
 }
 
 @end

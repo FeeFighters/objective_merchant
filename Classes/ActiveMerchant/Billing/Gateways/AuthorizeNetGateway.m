@@ -339,7 +339,7 @@
 
 - (void) addAddress:(NSMutableDictionary*)post options:(NSDictionary*)_options
 {
-	NSDictionary *address = [_options objectForKey:@"billing_address"];
+	NSDictionary *address = [_options objectForKey:@"billingAddress"];
 	if (address==nil)
 		address = [_options objectForKey:@"address"];
 	
@@ -361,7 +361,7 @@
 - (NSString*) expdate:(BillingCreditCard*)creditcard
 {
 	NSString *year = [NSString stringWithFormat:@"%.4i", [[creditcard year] intValue]];
-	return [NSString stringWithFormat:@"%.2i%@", [[creditcard month] intValue], [year substringWithRange:NSMakeRange([year length]-3, 2)]];
+	return [NSString stringWithFormat:@"%.2i%@", [[creditcard month] intValue], [year substringWithRange:NSMakeRange([year length]-2, 2)]];
 }
 
 

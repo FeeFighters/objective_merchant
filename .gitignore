@@ -1,3 +1,4 @@
 .project
 .tmp*
 build
+Tests/Gateways/Authorize.Net.Test.plist
