@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D36BEB40F4692CD004D1B49 /* BogusGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36BEB20F4692CD004D1B49 /* BogusGateway.h */; };
+		1D36BEB50F4692CD004D1B49 /* BogusGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BEB30F4692CD004D1B49 /* BogusGateway.m */; };
+		1D36BEBE0F469A2B004D1B49 /* BogusTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36BEBC0F469A2B004D1B49 /* BogusTest.h */; };
+		1D36BEC00F469A39004D1B49 /* BogusTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BEBD0F469A2B004D1B49 /* BogusTest.m */; };
+		1D36BEFB0F469B9B004D1B49 /* GatewayTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BEFA0F469B9B004D1B49 /* GatewayTestHelper.m */; };
 		1D4A106D0F3E8AEF00F61A30 /* CreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */; };
 		1D4A106E0F3E8AEF00F61A30 /* CreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */; };
 		1D4A10F70F3EB1BD00F61A30 /* CreditCardMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */; };
@@ -74,6 +79,12 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1D36BEB20F4692CD004D1B49 /* BogusGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BogusGateway.h; sourceTree = "<group>"; };
+		1D36BEB30F4692CD004D1B49 /* BogusGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BogusGateway.m; sourceTree = "<group>"; };
+		1D36BEBC0F469A2B004D1B49 /* BogusTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BogusTest.h; sourceTree = "<group>"; };
+		1D36BEBD0F469A2B004D1B49 /* BogusTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BogusTest.m; sourceTree = "<group>"; };
+		1D36BEF90F469B9B004D1B49 /* GatewayTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatewayTestHelper.h; sourceTree = "<group>"; };
+		1D36BEFA0F469B9B004D1B49 /* GatewayTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayTestHelper.m; sourceTree = "<group>"; };
 		1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCard.h; sourceTree = "<group>"; };
 		1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCard.m; sourceTree = "<group>"; };
 		1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardMethods.h; sourceTree = "<group>"; };
@@ -247,6 +258,8 @@
 			children = (
 				1D9061BF0F3FD56500C211A1 /* AuthorizeNetGateway.h */,
 				1D9061C00F3FD56500C211A1 /* AuthorizeNetGateway.m */,
+				1D36BEB20F4692CD004D1B49 /* BogusGateway.h */,
+				1D36BEB30F4692CD004D1B49 /* BogusGateway.m */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -258,6 +271,10 @@
 				1DCE22240F4672A200F2FE6F /* Authorize.Net.Test.plist */,
 				1D9063690F40E88A00C211A1 /* AuthorizeNetTest.h */,
 				1D90636A0F40E88A00C211A1 /* AuthorizeNetTest.m */,
+				1D36BEBC0F469A2B004D1B49 /* BogusTest.h */,
+				1D36BEBD0F469A2B004D1B49 /* BogusTest.m */,
+				1D36BEF90F469B9B004D1B49 /* GatewayTestHelper.h */,
+				1D36BEFA0F469B9B004D1B49 /* GatewayTestHelper.m */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -375,6 +392,8 @@
 				1D9061BC0F3FD54100C211A1 /* Validatable_Implementation.h in Headers */,
 				1D9061C10F3FD56500C211A1 /* AuthorizeNetGateway.h in Headers */,
 				1D9062B70F40D09700C211A1 /* objCFixes.h in Headers */,
+				1D36BEB40F4692CD004D1B49 /* BogusGateway.h in Headers */,
+				1D36BEBE0F469A2B004D1B49 /* BogusTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +498,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9065CB0F442F2200C211A1 /* AuthorizeNetTest.m in Sources */,
+				1D36BEC00F469A39004D1B49 /* BogusTest.m in Sources */,
+				1D36BEFB0F469B9B004D1B49 /* GatewayTestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +523,7 @@
 				1D90619F0F3FCD5A00C211A1 /* Response.m in Sources */,
 				1D9061A50F3FD53700C211A1 /* Errors.m in Sources */,
 				1D9061C20F3FD56500C211A1 /* AuthorizeNetGateway.m in Sources */,
+				1D36BEB50F4692CD004D1B49 /* BogusGateway.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
