@@ -5,7 +5,7 @@
 		activeExecutable = 1D9063880F4100D500C211A1 /* tests */;
 		activeTarget = 1DEBCC340F3E32F600AA742F /* objective_merchant_tests */;
 		addToTargets = (
-			1DEBCC340F3E32F600AA742F /* objective_merchant_tests */,
+			8DC2EF4F0486A6940098B216 /* objective_merchant */,
 		);
 		breakpoints = (
 			1D90643A0F44163600C211A1 /* AuthorizeNetTest.m:64 */,
@@ -381,9 +381,9 @@
 	};
 	1D36BEBD0F469A2B004D1B49 /* BogusTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {801, 826}}";
-			sepNavSelRange = "{834, 0}";
-			sepNavVisRange = "{351, 1028}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 812}}";
+			sepNavSelRange = "{927, 0}";
+			sepNavVisRange = "{676, 348}";
 		};
 	};
 	1D36BEC10F469A54004D1B49 /* PlistBookmark */ = {
@@ -1826,8 +1826,8 @@
 	};
 	1D9062B50F40D09700C211A1 /* objCFixes.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {795, 380}}";
-			sepNavSelRange = "{146, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {801, 522}}";
+			sepNavSelRange = "{202, 0}";
 			sepNavVisRange = "{0, 474}";
 		};
 	};
@@ -1880,9 +1880,9 @@
 	};
 	1D90636A0F40E88A00C211A1 /* AuthorizeNetTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {840, 1946}}";
-			sepNavSelRange = "{3153, 0}";
-			sepNavVisRange = "{2416, 1649}";
+			sepNavIntBoundsRect = "{{0, 0}, {816, 2016}}";
+			sepNavSelRange = "{1167, 0}";
+			sepNavVisRange = "{1092, 1813}";
 			sepNavWindowFrame = "{{38, 13}, {960, 839}}";
 		};
 	};
@@ -2460,9 +2460,9 @@
 	};
 	1D976D860F3EEED700E77C6D /* README.textile */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1338, 522}}";
-			sepNavSelRange = "{497, 0}";
-			sepNavVisRange = "{0, 634}";
+			sepNavIntBoundsRect = "{{0, 0}, {1338, 658}}";
+			sepNavSelRange = "{526, 0}";
+			sepNavVisRange = "{0, 1745}";
 			sepNavVisRect = "{{0, 0}, {884, 717}}";
 		};
 	};

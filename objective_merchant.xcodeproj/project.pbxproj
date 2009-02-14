@@ -12,6 +12,10 @@
 		1D36BEBE0F469A2B004D1B49 /* BogusTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36BEBC0F469A2B004D1B49 /* BogusTest.h */; };
 		1D36BEC00F469A39004D1B49 /* BogusTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BEBD0F469A2B004D1B49 /* BogusTest.m */; };
 		1D36BEFB0F469B9B004D1B49 /* GatewayTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BEFA0F469B9B004D1B49 /* GatewayTestHelper.m */; };
+		1D36BF3C0F46A608004D1B49 /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36BF3A0F46A608004D1B49 /* GDataXMLNode.h */; };
+		1D36BF3D0F46A608004D1B49 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BF3B0F46A608004D1B49 /* GDataXMLNode.m */; };
+		1D36BF490F46ABBC004D1B49 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D36BF480F46ABBC004D1B49 /* libxml2.dylib */; };
+		1D36BF4C0F46AC35004D1B49 /* GDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36BF4B0F46AC35004D1B49 /* GDataDefines.h */; };
 		1D4A106D0F3E8AEF00F61A30 /* CreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */; };
 		1D4A106E0F3E8AEF00F61A30 /* CreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */; };
 		1D4A10F70F3EB1BD00F61A30 /* CreditCardMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */; };
@@ -85,6 +89,10 @@
 		1D36BEBD0F469A2B004D1B49 /* BogusTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BogusTest.m; sourceTree = "<group>"; };
 		1D36BEF90F469B9B004D1B49 /* GatewayTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatewayTestHelper.h; sourceTree = "<group>"; };
 		1D36BEFA0F469B9B004D1B49 /* GatewayTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayTestHelper.m; sourceTree = "<group>"; };
+		1D36BF3A0F46A608004D1B49 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		1D36BF3B0F46A608004D1B49 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		1D36BF480F46ABBC004D1B49 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
+		1D36BF4B0F46AC35004D1B49 /* GDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataDefines.h; sourceTree = "<group>"; };
 		1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCard.h; sourceTree = "<group>"; };
 		1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCard.m; sourceTree = "<group>"; };
 		1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardMethods.h; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 			files = (
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				1D976C320F3ECA0700E77C6D /* libicucore.dylib in Frameworks */,
+				1D36BF490F46ABBC004D1B49 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +228,7 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D36BF480F46ABBC004D1B49 /* libxml2.dylib */,
 				1D976C310F3ECA0700E77C6D /* libicucore.dylib */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 			);
@@ -295,6 +305,9 @@
 		1D976EAD0F3F5DF600E77C6D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1D36BF4B0F46AC35004D1B49 /* GDataDefines.h */,
+				1D36BF3A0F46A608004D1B49 /* GDataXMLNode.h */,
+				1D36BF3B0F46A608004D1B49 /* GDataXMLNode.m */,
 				1D976EAE0F3F5DF600E77C6D /* RegexKitLite.h */,
 				1D976EAF0F3F5DF600E77C6D /* RegexKitLite.m */,
 				1D976EB00F3F5DF600E77C6D /* VarArgsHelper.h */,
@@ -394,6 +407,8 @@
 				1D9062B70F40D09700C211A1 /* objCFixes.h in Headers */,
 				1D36BEB40F4692CD004D1B49 /* BogusGateway.h in Headers */,
 				1D36BEBE0F469A2B004D1B49 /* BogusTest.h in Headers */,
+				1D36BF3C0F46A608004D1B49 /* GDataXMLNode.h in Headers */,
+				1D36BF4C0F46AC35004D1B49 /* GDataDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +539,7 @@
 				1D9061A50F3FD53700C211A1 /* Errors.m in Sources */,
 				1D9061C20F3FD56500C211A1 /* AuthorizeNetGateway.m in Sources */,
 				1D36BEB50F4692CD004D1B49 /* BogusGateway.m in Sources */,
+				1D36BF3D0F46A608004D1B49 /* GDataXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +580,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = objective_merchant_Prefix.pch;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = objective_merchant;
