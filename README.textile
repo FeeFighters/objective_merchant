@@ -6,4 +6,41 @@ The goal of the project is to duplicate as much of the core functionality from a
 
 _Initially, a limited number of processing gateways will be supported... mostly likely Authorize.Net and Paypal._
 
+h2. Authorize.Net Example
+
+Here is a basic example of how to use this library with the Authorize.Net gateway:
+
+<pre>
+<code>
+	BillingResponse *response;	
+	[BillingBase setGatewayMode:Test];
+
+	BillingCreditCard *card = [[BillingCreditCard alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
+															   @"4111111111111111", @"number",
+															   [NSNumber numberWithInt:8], @"month",
+															   [NSNumber numberWithInt:2012], @"year",
+															   @"Joshua", @"firstName",
+															   @"Krall", @"lastName",
+															   @"123", @"verificationValue",
+															   nil]];
+	
+	if ([card is_valid])
+	{
+		AuthorizeNetGateway *gateway = [[AuthorizeNetGateway alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
+																		  @"my_login", @"login",
+																		  @"my_tran_key", @"password",
+																		  nil]];
+
+		response = [gateway authorize:[NSNumber numberWithInt:200] creditcard:card options:[[NSDictionary alloc] init]];
+		if (![response is_success])
+			[NSException raise:@"Authorize.Net Gateway Error, authorize:" format:[response message]];
+		else {
+			response = [gateway capture:[NSNumber numberWithInt:200] authorization:[response authorization] options:[[NSDictionary alloc] init]];
+			if (![response is_success])
+				[NSException raise:@"Authorize.Net Gateway Error, capture:" format:[response message]];
+		}
+	}
+</code>
+</pre>
+
 It is sponsored by "Transparent Financial Services":http://transfs.com at "TransFS.com":http://transfs.com.
