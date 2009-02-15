@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>testMode</key>
+	<false/>
+	<key>creditCard</key>
+	<dict>
+		<key>cvv</key>
+		<string>341</string>
+		<key>lastName</key>
+		<string>Harper</string>
+		<key>firstName</key>
+		<string>Sean</string>
+		<key>year</key>
+		<integer>2012</integer>
+		<key>month</key>
+		<integer>1</integer>
+		<key>number</key>
+		<string>5322211735971015</string>
+	</dict>
+	<key>login</key>
+	<string>colormatch03</string>
+	<key>tran_key</key>
+	<string>GDcaTHnMhTCdqcT9</string>
+</dict>
+</plist>
