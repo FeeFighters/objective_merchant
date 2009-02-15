@@ -6,7 +6,12 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#if defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_IPHONE)
+#import <UIKit/UIKit.h>
+#else
 #import <Cocoa/Cocoa.h>
+#endif
+
 #import "Gateway.h"
 #import "Response.h"
 #import "CreditCard.h"
