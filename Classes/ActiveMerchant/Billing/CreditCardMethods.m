@@ -131,14 +131,13 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 
 + (NSString *)getTypeWithPartialNumber:(NSString *)partialNumber
 {
-	NSMutableString *fullNumber15 = [[NSMutableString alloc] init];
-	[fullNumber15 appendString:partialNumber];
+	NSString *fullNumber15 = [partialNumber  stringByPaddingToLength:15 withString:@"0" startingAtIndex:0];
+	assert([fullNumber15 length] == 15);
+	
+	NSString *fullNumber16 = [partialNumber  stringByPaddingToLength:16 withString:@"0" startingAtIndex:0];
+	assert([fullNumber16 length] == 16);
 	
 	// First we try 16-number matches
-	for (int i=0; i<(15 - [partialNumber length]); i++)
-		[fullNumber15 appendString:@"0"];
-	NSString *fullNumber16 = [NSString stringWithFormat:@"%@0", fullNumber15];
-	
 	NSString *match = [BillingCreditCard getType:fullNumber16];
 	if (match!=nil)
 		return match;
