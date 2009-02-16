@@ -23,6 +23,7 @@
 + (bool) is_validNumber:(NSString *)number;
 + (NSDictionary *)cardCompanies;
 + (NSString *)getType:(NSString *)number;
++ (NSString *)getTypeWithPartialNumber:(NSString *)partialNumber;
 + (NSString *)lastDigits:(NSString *)number;
 + (NSString *)mask:(NSString *)number;
 + (bool) is_matchingType:(NSString *)number type:(NSString *)type;

@@ -26,7 +26,7 @@
 	
 	//	md5 << String($$)  -- Not sure what to do about this one...	
 	
-	NSString *classNameStr = [NSString stringWithFormat:@"%s", [[self class] className]];
+	NSString *classNameStr = [NSString stringWithFormat:@"%s", [[self class] name]];
 	[data appendBytes:[classNameStr UTF8String] length:[classNameStr length]];
 	
 	return [data md5ToString];

@@ -46,6 +46,7 @@ static NSDictionary* _BillingCvvResult_messages = nil;
 											@"Issuer unable to process request", @"U", 
 											@"Card does not support verification", @"X", 
 											nil];
+		[_BillingCvvResult_messages retain];
 	}
 	return _BillingCvvResult_messages;
 }

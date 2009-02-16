@@ -166,7 +166,7 @@ static NSString* _BogusGateway_displayName = nil;
 + (NSArray *) supportedCountries
 {
 	if (_BogusGateway_supportedCountries==nil) {
-		_BogusGateway_supportedCountries = [[NSArray alloc] init];
+		_BogusGateway_supportedCountries = [[[NSArray alloc] init] retain];
 	}
 	return _BogusGateway_supportedCountries;
 }
@@ -179,7 +179,7 @@ static NSString* _BogusGateway_displayName = nil;
 + (NSArray *) supportedCardtypes
 {
 	if (_BogusGateway_supportedCardtypes==nil) {
-		_BogusGateway_supportedCardtypes = [[NSArray alloc] init];
+		_BogusGateway_supportedCardtypes = [[[NSArray alloc] init] retain];
 	}
 	return _BogusGateway_supportedCardtypes;
 }
