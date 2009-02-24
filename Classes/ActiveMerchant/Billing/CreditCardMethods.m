@@ -151,7 +151,7 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 	if ([number length] <= 4) {
 		return number;
 	}
-	return [number substringWithRange:NSMakeRange([number length] - 5, 4)];
+	return [number substringWithRange:NSMakeRange([number length] - 4, 4)];
 }
 
 + (NSString *)mask:(NSString *)number
