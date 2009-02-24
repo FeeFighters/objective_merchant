@@ -66,7 +66,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 //
 - (void) beforeValidate
 {
-	int count = [number replaceOccurrencesOfRegex:@"[^0-9]" withString:@""];
+	[number replaceOccurrencesOfRegex:@"[^0-9]" withString:@""];
 	if ([NSString is_blank:type]) {
 		NSString* temp = [BillingCreditCard getType:number];
 		if (temp==nil) temp = @"";
@@ -86,7 +86,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 - (void) validateCardNumber
 {
 	if (![BillingCreditCard is_validNumber:number])
-		[_errors add:@"number" error:@"is not a valid credit card number"];	
+		[_errors add:@"number" error:@"is not valid"];	
 
 	if (!([_errors on:@"number"] || [_errors on:@"type"]))
 	{

@@ -40,7 +40,7 @@
 
 - (NSString*) name
 {
-	return [[self class] name];
+	return [[self class] className];
 }
 
 - (NSString *)amount:(id)money
