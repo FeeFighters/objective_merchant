@@ -25,27 +25,10 @@
 	[myRequest setHTTPMethod:@"POST"];
 	[myRequest setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
 	
-//	NSDictionary *sslSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-//								 (NSString *)kCFStreamSocketSecurityLevelNegotiatedSSL, kCFStreamSSLLevel,
-//								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredCertificates,
-//								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredRoots,
-//								 [NSNumber numberWithBool:YES], kCFStreamSSLAllowsAnyRoot,
-//								 [NSNumber numberWithBool:NO], kCFStreamSSLValidatesCertificateChain,
-//								 [NSNull null], kCFStreamSSLPeerName,
-//								 nil];
-//	CFReadStreamSetProperty(myReadStream, kCFStreamPropertySSLSettings, sslSettings);
-//	CFReadStreamSetProperty(myReadStream, kCFStreamPropertyHTTPShouldAutoredirect, kCFBooleanTrue);
-
 	NSURLResponse *myResponse = nil;
 	NSError *error = nil;
 	NSData *responseData = [NSURLConnection sendSynchronousRequest:myRequest returningResponse:&myResponse error:&error];
 	NSString *body = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-	
-	[myURL release];
-	[myRequest release];
-	[myResponse release];
-	[responseData release];
-	//[sslSettings release];
 	
 	return body;
 }

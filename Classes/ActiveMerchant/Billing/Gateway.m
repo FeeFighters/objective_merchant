@@ -112,7 +112,7 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 + (NSArray *) supportedCountries
 {
 	if (_BillingGateway_supportedCountries==nil) {
-		_BillingGateway_supportedCountries = [[NSArray alloc] init];
+		_BillingGateway_supportedCountries = [[[NSArray alloc] init] retain];
 	}
 	return _BillingGateway_supportedCountries;
 }
@@ -125,7 +125,7 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 + (NSArray *) supportedCardtypes
 {
 	if (_BillingGateway_supportedCardtypes==nil) {
-		_BillingGateway_supportedCardtypes = [[NSArray alloc] init];
+		_BillingGateway_supportedCardtypes = [[[NSArray alloc] init] retain];
 	}
 	return _BillingGateway_supportedCardtypes;
 }

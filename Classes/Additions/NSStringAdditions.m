@@ -29,12 +29,18 @@
 			];
 }
 
+
 - (NSString *) capitalizeLastLetter
 {
-	return [NSString stringWithFormat:@"%@%@", 
-			[self substringWithRange:NSMakeRange(0, [self length]-1)],
-			[[self substringWithRange:NSMakeRange([self length]-1, 1)] uppercaseString]
-			];
+return [NSString stringWithFormat:@"%@%@", 
+		[self substringWithRange:NSMakeRange(0, [self length]-1)],
+		[[self substringWithRange:NSMakeRange([self length]-1, 1)] uppercaseString]
+		];
+}
+
+- (NSString *) humanize
+{
+	return [self stringByReplacingOccurrencesOfRegex:@"([a-z])([A-Z])" withString:@"$1 $2"];
 }
 
 - (NSString *) lowercaseFirstLetter

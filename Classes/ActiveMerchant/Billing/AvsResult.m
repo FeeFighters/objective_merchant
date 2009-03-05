@@ -58,7 +58,7 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 {
 	if (_BillingAvsResult_messages==nil)
 	{
-		_BillingAvsResult_messages = [NSDictionary dictionaryWithObjectsAndKeys:
+		_BillingAvsResult_messages = [[NSDictionary dictionaryWithObjectsAndKeys:
 						@"Street address matches, but 5-digit and 9-digit postal code do not match.", @"A", 
 						@"Street address matches, but postal code not verified.", @"B", 
 						@"Street address and postal code do not match.", @"C", 
@@ -85,7 +85,7 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 						@"Street address and 9-digit postal code match.", @"X", 
 						@"Street address and 5-digit postal code match.", @"Y", 
 						@"Street address does not match, but 5-digit postal code matches.", @"Z", 
-						nil];			
+						nil] retain];			
 	}
 	return _BillingAvsResult_messages;
 }
@@ -103,7 +103,7 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 		NSArray *_x_codes = [NSArray arrayWithObjects: @"G",@"S", nil];		
 		NSArray *_nil_codes = [NSArray arrayWithObjects: @"B",@"E",@"I",@"R",@"T",@"U", nil];
 
-		_BillingAvsResult_postalMatchCodes = [[NSMutableDictionary alloc] init];
+		_BillingAvsResult_postalMatchCodes = [[[NSMutableDictionary alloc] init] retain];
 		
 		id currentCode;
 		NSEnumerator *enumerator;
@@ -140,7 +140,7 @@ static NSDictionary* _BillingAvsResult_streetMatchCodes = nil;
 		NSArray *_x_codes = [NSArray arrayWithObjects: @"G",@"S", nil];		
 		NSArray *_nil_codes = [NSArray arrayWithObjects: @"E",@"F",@"I",@"R",@"U", nil];
 		
-		_BillingAvsResult_streetMatchCodes = [[NSMutableDictionary alloc] init];
+		_BillingAvsResult_streetMatchCodes = [[[NSMutableDictionary alloc] init] retain];
 		
 		id currentCode;
 		NSEnumerator *enumerator;		

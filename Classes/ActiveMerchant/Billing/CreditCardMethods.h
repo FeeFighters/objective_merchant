@@ -6,7 +6,11 @@
 //  Copyright 2009 TransFS.com. All rights reserved.
 //
 
+#if defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_IPHONE)
+#import <UIKit/UIKit.h>
+#else
 #import <Cocoa/Cocoa.h>
+#endif
 
 
 @interface BillingCreditCard (Methods)
@@ -19,6 +23,7 @@
 + (bool) is_validNumber:(NSString *)number;
 + (NSDictionary *)cardCompanies;
 + (NSString *)getType:(NSString *)number;
++ (NSString *)getTypeWithPartialNumber:(NSString *)partialNumber;
 + (NSString *)lastDigits:(NSString *)number;
 + (NSString *)mask:(NSString *)number;
 + (bool) is_matchingType:(NSString *)number type:(NSString *)type;

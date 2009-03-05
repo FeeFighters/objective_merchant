@@ -66,9 +66,11 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 //
 - (void) beforeValidate
 {
-	int count = [number replaceOccurrencesOfRegex:@"[^0-9]" withString:@""];
+	[number replaceOccurrencesOfRegex:@"[^0-9]" withString:@""];
 	if ([NSString is_blank:type]) {
-		type = [NSString stringWithString:[BillingCreditCard getType:number]];
+		NSString* temp = [BillingCreditCard getType:number];
+		if (temp==nil) temp = @"";
+		type = [NSString stringWithString:temp];
 	} else {
 		type = [NSString stringWithString:[type lowercaseString]];
 	}
@@ -84,7 +86,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 - (void) validateCardNumber
 {
 	if (![BillingCreditCard is_validNumber:number])
-		[_errors add:@"number" error:@"is not a valid credit card number"];	
+		[_errors add:@"number" error:@"is not valid"];	
 
 	if (!([_errors on:@"number"] || [_errors on:@"type"]))
 	{
@@ -97,7 +99,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 	if ([NSString is_blank:firstName]) [_errors add:@"firstName" error:@"cannot be empty"];
 	if ([NSString is_blank:lastName]) [_errors add:@"lastName" error:@"cannot be empty"];
 	if (![self is_validMonth:month]) [_errors add:@"month" error:@"is not a valid month"];
-	if ([self is_expired]) [_errors add:@"year" error:@"expired"];
+	if ([self is_expired]) [_errors add:@"card" error:@"is expired"];
 	if (![self is_validExpiryYear:year]) [_errors add:@"year" error:@"is not a valid year"];	
 }
 - (void) validateVerificationValue

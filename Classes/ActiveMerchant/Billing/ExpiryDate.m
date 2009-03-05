@@ -37,12 +37,17 @@
 {
 	NSDate *today = [NSDate date];
 	NSDate *_exp = [self expiration];	
-	return [today isGreaterThan:_exp];
+	return ([today compare:_exp] != NSOrderedAscending);
 }
 
 - (NSDate *) expiration
 {
-	return [NSDate dateWithString:[NSString stringWithFormat:@"%04d-%02d-%02d 23:59:59 +0000", [year intValue], [month intValue], [self monthDays]]];
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init]  autorelease];
+	//[dateFormatter setDateFormat:@"%m/%d/%Y"];
+	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	[dateFormatter setDateStyle:NSDateFormatterShortStyle];		
+	NSDate *date = [dateFormatter dateFromString:[NSString stringWithFormat:@"%02d/%02d/%04d", [month intValue], [self monthDays], [year intValue]]];
+	return date;
 }
 
 

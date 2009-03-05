@@ -232,6 +232,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -289,7 +291,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>4</integer>
 									<integer>3</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -326,14 +328,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PaypalTest.m</string>
+								<string>Paypal.Test.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -341,16 +341,15 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PaypalTest.m</string>
+										<string>Paypal.Test.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1D91A72D0F5F598C00792E8B</string>
+										<string>1D91A7430F5F5B0A00792E8B</string>
 										<key>history</key>
 										<array>
 											<string>1D90628D0F40CDA900C211A1</string>
 											<string>1D9064E20F44242F00C211A1</string>
-											<string>1D9065340F44279E00C211A1</string>
 											<string>1D9065380F44279E00C211A1</string>
 											<string>1D9066310F4438E000C211A1</string>
 											<string>1D9066A20F443D9700C211A1</string>
@@ -404,22 +403,23 @@
 											<string>1D91A6350F5F172C00792E8B</string>
 											<string>1D91A6370F5F172C00792E8B</string>
 											<string>1D91A6380F5F172C00792E8B</string>
-											<string>1D91A6670F5F1AF100792E8B</string>
 											<string>1D91A6C10F5F2B4400792E8B</string>
 											<string>1D91A6DF0F5F2E2100792E8B</string>
 											<string>1D91A6FD0F5F53D100792E8B</string>
-											<string>1D91A6FF0F5F53D100792E8B</string>
-											<string>1D91A7000F5F53D100792E8B</string>
 											<string>1D91A7010F5F53D100792E8B</string>
 											<string>1D91A7020F5F53D100792E8B</string>
 											<string>1D91A7040F5F53D100792E8B</string>
 											<string>1D91A7050F5F53D100792E8B</string>
 											<string>1D91A7060F5F53D100792E8B</string>
-											<string>1D91A71B0F5F56DD00792E8B</string>
 											<string>1D91A7230F5F592A00792E8B</string>
 											<string>1D91A7240F5F592A00792E8B</string>
 											<string>1D91A7250F5F592A00792E8B</string>
-											<string>1D91A7260F5F592A00792E8B</string>
+											<string>1D91A7380F5F5B0A00792E8B</string>
+											<string>1D91A7390F5F5B0A00792E8B</string>
+											<string>1D91A73A0F5F5B0A00792E8B</string>
+											<string>1D91A73B0F5F5B0A00792E8B</string>
+											<string>1D91A73C0F5F5B0A00792E8B</string>
+											<string>1D91A73D0F5F5B0A00792E8B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -533,6 +533,11 @@
 											<string>1D91A7290F5F592A00792E8B</string>
 											<string>1D91A72A0F5F592A00792E8B</string>
 											<string>1D91A72B0F5F592A00792E8B</string>
+											<string>1D91A73E0F5F5B0A00792E8B</string>
+											<string>1D91A73F0F5F5B0A00792E8B</string>
+											<string>1D91A7400F5F5B0A00792E8B</string>
+											<string>1D91A7410F5F5B0A00792E8B</string>
+											<string>1D91A7420F5F5B0A00792E8B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -742,10 +747,10 @@
 		<string>1D91A52F0F5EE4E100792E8B</string>
 		<string>1D91A46F0F5ED29100792E8B</string>
 		<string>1D91A4700F5ED29100792E8B</string>
+		<string>1DEBCBA80F3E187A00AA742F</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>1DEBCBA80F3E187A00AA742F</string>
 		<string>/Users/krall/Documents/Entreprenuer/TransFS/programming/objective_merchant/objective_merchant.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -770,7 +775,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PaypalCommonAPI_Implementation.h</string>
+								<string>NSStringAdditions.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -839,7 +844,7 @@
 			<key>WindowToolGUID</key>
 			<string>1DEBCBA80F3E187A00AA742F</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

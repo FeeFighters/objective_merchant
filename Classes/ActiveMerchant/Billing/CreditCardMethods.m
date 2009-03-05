@@ -102,6 +102,7 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 										@"^600722\\d{10}$", @"forbrugsforeningen", 
 										@"^(6304[89]\\d{11}(\\d{2,3})?|670695\\d{13})$", @"laser", 
 										nil];
+		[_BillingCreditCard_cardCompanies retain];
 	}
 	return _BillingCreditCard_cardCompanies;
 }
@@ -128,12 +129,29 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 	return nil;
 }
 
++ (NSString *)getTypeWithPartialNumber:(NSString *)partialNumber
+{
+	NSString *fullNumber15 = [partialNumber  stringByPaddingToLength:15 withString:@"0" startingAtIndex:0];
+	assert([fullNumber15 length] == 15);
+	
+	NSString *fullNumber16 = [partialNumber  stringByPaddingToLength:16 withString:@"0" startingAtIndex:0];
+	assert([fullNumber16 length] == 16);
+	
+	// First we try 16-number matches
+	NSString *match = [BillingCreditCard getType:fullNumber16];
+	if (match!=nil)
+		return match;
+
+	// Then we try 15-number matches
+	return [BillingCreditCard getType:fullNumber15];
+}
+
 + (NSString *)lastDigits:(NSString *)number
 {
 	if ([number length] <= 4) {
 		return number;
 	}
-	return [number substringWithRange:NSMakeRange([number length] - 5, 4)];
+	return [number substringWithRange:NSMakeRange([number length] - 4, 4)];
 }
 
 + (NSString *)mask:(NSString *)number

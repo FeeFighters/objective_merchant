@@ -378,7 +378,7 @@ static NSMutableString* _AuthorizeNetGateway_arbLiveUrl = nil;
 + (NSString *) testUrl
 {
 	if (_AuthorizeNetGateway_testUrl==nil)
-		_AuthorizeNetGateway_testUrl = [NSString stringWithString:@"https://test.authorize.net/gateway/transact.dll"];
+		_AuthorizeNetGateway_testUrl = [[NSString stringWithString:@"https://test.authorize.net/gateway/transact.dll"] retain];
 	return _AuthorizeNetGateway_testUrl;
 }
 + (void) setTestUrl:(NSString *)url
@@ -388,7 +388,7 @@ static NSMutableString* _AuthorizeNetGateway_arbLiveUrl = nil;
 + (NSString *) liveUrl
 {
 	if (_AuthorizeNetGateway_liveUrl==nil)
-		_AuthorizeNetGateway_liveUrl = [NSString stringWithString:@"https://secure.authorize.net/gateway/transact.dll"];
+		_AuthorizeNetGateway_liveUrl = [[NSString stringWithString:@"https://secure.authorize.net/gateway/transact.dll"] retain];
 	return _AuthorizeNetGateway_liveUrl;
 }
 + (void) setLiveUrl:(NSString *)url
@@ -398,7 +398,7 @@ static NSMutableString* _AuthorizeNetGateway_arbLiveUrl = nil;
 + (NSString *) arbTestUrl
 {
 	if (_AuthorizeNetGateway_arbTestUrl==nil)
-		_AuthorizeNetGateway_arbTestUrl = [NSString stringWithString:@"https://apitest.authorize.net/xml/v1/request.api"];
+		_AuthorizeNetGateway_arbTestUrl = [[NSString stringWithString:@"https://apitest.authorize.net/xml/v1/request.api"] retain];
 	return _AuthorizeNetGateway_arbTestUrl;
 }
 + (void) setArbTestUrl:(NSString *)url
@@ -408,7 +408,7 @@ static NSMutableString* _AuthorizeNetGateway_arbLiveUrl = nil;
 + (NSString *) arbLiveUrl
 {
 	if (_AuthorizeNetGateway_arbLiveUrl==nil)
-		_AuthorizeNetGateway_arbLiveUrl = [NSString stringWithString:@"https://api.authorize.net/xml/v1/request.api"];
+		_AuthorizeNetGateway_arbLiveUrl = [[NSString stringWithString:@"https://api.authorize.net/xml/v1/request.api"] retain];
 	return _AuthorizeNetGateway_arbLiveUrl;
 }
 + (void) setArbLiveUrl:(NSString *)url
@@ -430,7 +430,7 @@ static NSArray* _AuthorizeNetGateway_CardCodeErrors = nil;
 + (NSArray*)CardCodeErrors
 {
 	if (_AuthorizeNetGateway_CardCodeErrors==nil)
-		_AuthorizeNetGateway_CardCodeErrors = [NSArray arrayWithObjects:@"N", @"S", nil];
+		_AuthorizeNetGateway_CardCodeErrors = [[NSArray arrayWithObjects:@"N", @"S", nil] retain];
 	return _AuthorizeNetGateway_CardCodeErrors;
 }
 
@@ -438,7 +438,7 @@ static NSArray* _AuthorizeNetGateway_AvsErrors = nil;
 + (NSArray*)AvsErrors
 {
 	if (_AuthorizeNetGateway_AvsErrors==nil)
-		_AuthorizeNetGateway_AvsErrors = [NSArray arrayWithObjects:@"A", @"E", @"N", @"R", @"W", @"Z", nil];
+		_AuthorizeNetGateway_AvsErrors = [[NSArray arrayWithObjects:@"A", @"E", @"N", @"R", @"W", @"Z", nil] retain];
 	return _AuthorizeNetGateway_AvsErrors;
 }
 + (NSString*)AuthorizeNetArbNamespace
@@ -450,11 +450,11 @@ static NSDictionary* _AuthorizeNetGateway_RecurringActions = nil;
 + (NSDictionary*)RecurringActions
 {
 	if (_AuthorizeNetGateway_RecurringActions == nil)
-		_AuthorizeNetGateway_RecurringActions = [NSDictionary dictionaryWithObjectsAndKeys:
+		_AuthorizeNetGateway_RecurringActions = [[NSDictionary dictionaryWithObjectsAndKeys:
 													@"ARBCreateSubscription", @"create",
 													@"ARBUpdateSubscription", @"update",
 													@"ARBCancelSubscription", @"cancel", 
-												 nil];
+												 nil] retain];
 	return _AuthorizeNetGateway_RecurringActions;
 }
 

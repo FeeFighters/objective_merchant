@@ -51,6 +51,7 @@
 		1D91A4230F5ECBC400792E8B /* PaypalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91A4220F5ECBC400792E8B /* PaypalTest.m */; };
 		1D91A4260F5ECE8A00792E8B /* Paypal.Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D91A4250F5ECE8A00792E8B /* Paypal.Test.plist */; };
 		1D91A53A0F5EE58800792E8B /* GDataXMLNodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91A5390F5EE58800792E8B /* GDataXMLNodeAdditions.m */; };
+		1D91A7300F5F5AE000792E8B /* AuthorizeNetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D90636A0F40E88A00C211A1 /* AuthorizeNetTest.m */; };
 		1D976B7F0F3EBCD900E77C6D /* ExpiryDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */; };
 		1D976B800F3EBCD900E77C6D /* ExpiryDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */; };
 		1D976C320F3ECA0700E77C6D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D976C310F3ECA0700E77C6D /* libicucore.dylib */; };
@@ -558,6 +559,7 @@
 				1D36BEFB0F469B9B004D1B49 /* GatewayTestHelper.m in Sources */,
 				1D91A4230F5ECBC400792E8B /* PaypalTest.m in Sources */,
 				1D91A53A0F5EE58800792E8B /* GDataXMLNodeAdditions.m in Sources */,
+				1D91A7300F5F5AE000792E8B /* AuthorizeNetTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
