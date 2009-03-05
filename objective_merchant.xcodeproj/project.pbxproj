@@ -43,7 +43,14 @@
 		1D9061C20F3FD56500C211A1 /* AuthorizeNetGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9061C00F3FD56500C211A1 /* AuthorizeNetGateway.m */; };
 		1D9062B70F40D09700C211A1 /* objCFixes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9062B50F40D09700C211A1 /* objCFixes.h */; };
 		1D9063830F40EE0200C211A1 /* objective_merchant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* objective_merchant.framework */; };
-		1D9065CB0F442F2200C211A1 /* AuthorizeNetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D90636A0F40E88A00C211A1 /* AuthorizeNetTest.m */; };
+		1D91A2AC0F5C8D3B00792E8B /* PaypalGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D91A2AA0F5C8D3B00792E8B /* PaypalGateway.h */; };
+		1D91A2AD0F5C8D3B00792E8B /* PaypalGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91A2AB0F5C8D3B00792E8B /* PaypalGateway.m */; };
+		1D91A2B00F5C8D4600792E8B /* PaypalCommonAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D91A2AF0F5C8D4600792E8B /* PaypalCommonAPI.h */; };
+		1D91A2C30F5D1BDE00792E8B /* PaypalCommonAPI_Implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D91A2C20F5D1BDE00792E8B /* PaypalCommonAPI_Implementation.h */; };
+		1D91A2D30F5D213100792E8B /* PaypalCommonAPI_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D91A2D20F5D213100792E8B /* PaypalCommonAPI_Private.h */; };
+		1D91A4230F5ECBC400792E8B /* PaypalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91A4220F5ECBC400792E8B /* PaypalTest.m */; };
+		1D91A4260F5ECE8A00792E8B /* Paypal.Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D91A4250F5ECE8A00792E8B /* Paypal.Test.plist */; };
+		1D91A53A0F5EE58800792E8B /* GDataXMLNodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91A5390F5EE58800792E8B /* GDataXMLNodeAdditions.m */; };
 		1D976B7F0F3EBCD900E77C6D /* ExpiryDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */; };
 		1D976B800F3EBCD900E77C6D /* ExpiryDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */; };
 		1D976C320F3ECA0700E77C6D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D976C310F3ECA0700E77C6D /* libicucore.dylib */; };
@@ -121,6 +128,17 @@
 		1D9062B50F40D09700C211A1 /* objCFixes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objCFixes.h; sourceTree = "<group>"; };
 		1D9063690F40E88A00C211A1 /* AuthorizeNetTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizeNetTest.h; sourceTree = "<group>"; };
 		1D90636A0F40E88A00C211A1 /* AuthorizeNetTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizeNetTest.m; sourceTree = "<group>"; };
+		1D91A2AA0F5C8D3B00792E8B /* PaypalGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaypalGateway.h; sourceTree = "<group>"; };
+		1D91A2AB0F5C8D3B00792E8B /* PaypalGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaypalGateway.m; sourceTree = "<group>"; };
+		1D91A2AF0F5C8D4600792E8B /* PaypalCommonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaypalCommonAPI.h; sourceTree = "<group>"; };
+		1D91A2C20F5D1BDE00792E8B /* PaypalCommonAPI_Implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaypalCommonAPI_Implementation.h; sourceTree = "<group>"; };
+		1D91A2D20F5D213100792E8B /* PaypalCommonAPI_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaypalCommonAPI_Private.h; sourceTree = "<group>"; };
+		1D91A4210F5ECBC400792E8B /* PaypalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaypalTest.h; sourceTree = "<group>"; };
+		1D91A4220F5ECBC400792E8B /* PaypalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaypalTest.m; sourceTree = "<group>"; };
+		1D91A4240F5ECBD000792E8B /* Paypal.Test.Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Paypal.Test.Sample.plist; sourceTree = "<group>"; };
+		1D91A4250F5ECE8A00792E8B /* Paypal.Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Paypal.Test.plist; sourceTree = "<group>"; };
+		1D91A5380F5EE58800792E8B /* GDataXMLNodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNodeAdditions.h; sourceTree = "<group>"; };
+		1D91A5390F5EE58800792E8B /* GDataXMLNodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNodeAdditions.m; sourceTree = "<group>"; };
 		1D976B7D0F3EBCD900E77C6D /* ExpiryDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiryDate.h; sourceTree = "<group>"; };
 		1D976B7E0F3EBCD900E77C6D /* ExpiryDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiryDate.m; sourceTree = "<group>"; };
 		1D976C310F3ECA0700E77C6D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
@@ -129,7 +147,7 @@
 		1D976CE30F3ED10E00E77C6D /* Gateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gateway.h; sourceTree = "<group>"; };
 		1D976CE40F3ED10E00E77C6D /* Gateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gateway.m; sourceTree = "<group>"; };
 		1D976D860F3EEED700E77C6D /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
-		1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditions.h; sourceTree = "<group>"; };
+		1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayAdditions.h; path = Additions/NSArrayAdditions.h; sourceTree = "<group>"; };
 		1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditions.m; sourceTree = "<group>"; };
 		1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
@@ -218,6 +236,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */,
 				1D976EA20F3F5DF600E77C6D /* Additions */,
 				1D976EAD0F3F5DF600E77C6D /* Utility */,
 				1DEBCCE20F3E40DF00AA742F /* ActiveMerchant */,
@@ -266,6 +285,9 @@
 		1D9061BD0F3FD54F00C211A1 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				1D91A2AE0F5C8D4600792E8B /* Paypal */,
+				1D91A2AA0F5C8D3B00792E8B /* PaypalGateway.h */,
+				1D91A2AB0F5C8D3B00792E8B /* PaypalGateway.m */,
 				1D9061BF0F3FD56500C211A1 /* AuthorizeNetGateway.h */,
 				1D9061C00F3FD56500C211A1 /* AuthorizeNetGateway.m */,
 				1D36BEB20F4692CD004D1B49 /* BogusGateway.h */,
@@ -277,6 +299,10 @@
 		1D9063600F40E85000C211A1 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				1D91A4250F5ECE8A00792E8B /* Paypal.Test.plist */,
+				1D91A4240F5ECBD000792E8B /* Paypal.Test.Sample.plist */,
+				1D91A4210F5ECBC400792E8B /* PaypalTest.h */,
+				1D91A4220F5ECBC400792E8B /* PaypalTest.m */,
 				1DCE22910F467D2900F2FE6F /* Authorize.Net.Test.Sample.plist */,
 				1DCE22240F4672A200F2FE6F /* Authorize.Net.Test.plist */,
 				1D9063690F40E88A00C211A1 /* AuthorizeNetTest.h */,
@@ -289,10 +315,19 @@
 			path = Gateways;
 			sourceTree = "<group>";
 		};
+		1D91A2AE0F5C8D4600792E8B /* Paypal */ = {
+			isa = PBXGroup;
+			children = (
+				1D91A2AF0F5C8D4600792E8B /* PaypalCommonAPI.h */,
+				1D91A2C20F5D1BDE00792E8B /* PaypalCommonAPI_Implementation.h */,
+				1D91A2D20F5D213100792E8B /* PaypalCommonAPI_Private.h */,
+			);
+			path = Paypal;
+			sourceTree = "<group>";
+		};
 		1D976EA20F3F5DF600E77C6D /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				1D976EA30F3F5DF600E77C6D /* NSArrayAdditions.h */,
 				1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */,
 				1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */,
 				1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */,
@@ -313,6 +348,8 @@
 				1D976EB00F3F5DF600E77C6D /* VarArgsHelper.h */,
 				1D976EB10F3F5DF600E77C6D /* VarArgsHelper.m */,
 				1D9062B50F40D09700C211A1 /* objCFixes.h */,
+				1D91A5380F5EE58800792E8B /* GDataXMLNodeAdditions.h */,
+				1D91A5390F5EE58800792E8B /* GDataXMLNodeAdditions.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -409,6 +446,10 @@
 				1D36BEBE0F469A2B004D1B49 /* BogusTest.h in Headers */,
 				1D36BF3C0F46A608004D1B49 /* GDataXMLNode.h in Headers */,
 				1D36BF4C0F46AC35004D1B49 /* GDataDefines.h in Headers */,
+				1D91A2AC0F5C8D3B00792E8B /* PaypalGateway.h in Headers */,
+				1D91A2B00F5C8D4600792E8B /* PaypalCommonAPI.h in Headers */,
+				1D91A2C30F5D1BDE00792E8B /* PaypalCommonAPI_Implementation.h in Headers */,
+				1D91A2D30F5D213100792E8B /* PaypalCommonAPI_Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCE22430F46775400F2FE6F /* Authorize.Net.Test.plist in Resources */,
+				1D91A4260F5ECE8A00792E8B /* Paypal.Test.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,9 +554,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9065CB0F442F2200C211A1 /* AuthorizeNetTest.m in Sources */,
 				1D36BEC00F469A39004D1B49 /* BogusTest.m in Sources */,
 				1D36BEFB0F469B9B004D1B49 /* GatewayTestHelper.m in Sources */,
+				1D91A4230F5ECBC400792E8B /* PaypalTest.m in Sources */,
+				1D91A53A0F5EE58800792E8B /* GDataXMLNodeAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +583,7 @@
 				1D9061C20F3FD56500C211A1 /* AuthorizeNetGateway.m in Sources */,
 				1D36BEB50F4692CD004D1B49 /* BogusGateway.m in Sources */,
 				1D36BF3D0F46A608004D1B49 /* GDataXMLNode.m in Sources */,
+				1D91A2AD0F5C8D3B00792E8B /* PaypalGateway.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +627,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = objective_merchant;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -602,6 +647,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = objective_merchant;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -617,7 +663,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = iphonesimulator2.2;
 			};
 			name = Debug;
 		};
@@ -629,7 +675,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = iphonesimulator2.2;
 			};
 			name = Release;
 		};
@@ -647,6 +693,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "objective_merchant_tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (

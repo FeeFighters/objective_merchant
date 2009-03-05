@@ -654,9 +654,20 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
     xmlXPathContextPtr xpathCtx = xmlXPathNewContext(xmlNode_->doc); 
     if (xpathCtx) {
       
+		// Register our namespaces
+		xmlNsPtr currNS = xmlNode_->nsDef;
+		while (currNS != NULL) {
+			// add this prefix/URI to the list, unless it's the implicit xml prefix
+			if (!xmlStrEqual(currNS->prefix, (const xmlChar *) "xml")) {
+				xmlXPathRegisterNs(xpathCtx, currNS->prefix, currNS->href);
+			}
+			currNS = currNS->next;
+		}
+		
       // anchor at our current node
       xpathCtx->node = xmlNode_;
       
+
       xmlXPathObjectPtr xpathObj;
       xpathObj = xmlXPathEval(GDataGetXMLString(xpath), xpathCtx);
       if (xpathObj) {

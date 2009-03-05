@@ -2,3 +2,5 @@
 .tmp*
 build
 Tests/Gateways/Authorize.Net.Test.plist
+Tests/Gateways/Paypal.Test.plist
+.DS_Store

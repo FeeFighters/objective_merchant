@@ -18,14 +18,14 @@
 			NSString *firstObj = [(NSArray*)param objectAtIndex:0];
 			if ([hash objectForKey:firstObj]==nil) {
 				[NSException raise:@"ArgumentError" 
-							format:[NSString stringWithFormat:@"Missing required parameter: %s", firstObj] ];
+							format:[NSString stringWithFormat:@"Missing required parameter: %@", firstObj] ];
 			}
 			
 			NSMutableArray *validOptions = [NSMutableArray arrayWithArray:(NSArray*)param];
 			[validOptions removeObjectAtIndex:0];
 			if (![validOptions containsStringEqualTo:(NSString *)firstObj]) {
 				[NSException raise:@"ArgumentError" 
-							format:[NSString stringWithFormat:@"Parameter: %s must be one of %s", 
+							format:[NSString stringWithFormat:@"Parameter: %@ must be one of %@", 
 									firstObj, [NSString stringWithString:[validOptions componentsJoinedByString: @", "]]] 
 				];
 			}
@@ -33,7 +33,7 @@
 		else if ([param isKindOfClass:[NSString class]]) { 
 			if ([hash objectForKey:(NSString*)param]==nil) {
 				[NSException raise:@"ArgumentError" 
-							format:[NSString stringWithFormat:@"Missing required parameter: %s", (NSString*)param]
+							format:[NSString stringWithFormat:@"Missing required parameter: %@", (NSString*)param]
 				];
 			}
 		}

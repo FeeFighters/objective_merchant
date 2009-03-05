@@ -15,13 +15,13 @@
 	if ([NSString is_blank:number])
 		return @"";
 	
-	if ([option isEqualToString:@"two_digits"]) {
-		NSString *newstr = [NSString stringWithFormat:@"%.2i", number];
-		return [newstr substringWithRange:NSMakeRange([newstr length] - 3, 2)];
+	if ([option isEqualToString:@"twoDigits"]) {
+		NSString *newstr = [NSString stringWithFormat:@"%.2i", [number intValue]];
+		return [newstr substringWithRange:NSMakeRange([newstr length] - 2, 2)];
 	}
-	if ([option isEqualToString:@"four_digits"]) {
-		NSString *newstr = [NSString stringWithFormat:@"%.4i", number];
-		return [newstr substringWithRange:NSMakeRange([newstr length] - 5, 2)];
+	if ([option isEqualToString:@"fourDigits"]) {
+		NSString *newstr = [NSString stringWithFormat:@"%.4i", [number intValue]];
+		return [newstr substringWithRange:NSMakeRange([newstr length] - 4, 4)];
 	}
 	
 	return number;

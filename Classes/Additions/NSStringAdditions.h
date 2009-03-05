@@ -14,5 +14,11 @@
 - (bool) is_blank;
 + (bool) is_blank:(NSString *)str;
 - (NSString *) capitalizeFirstLetter;
+- (NSString *) lowercaseFirstLetter;
+- (NSString *) toCamelcase;
 
+@end
+
+@interface NSString (RegexKitLiteEnumeratorAdditions) 
+	- (NSEnumerator *)matchEnumeratorWithRegex:(NSString *)regex;
 @end
