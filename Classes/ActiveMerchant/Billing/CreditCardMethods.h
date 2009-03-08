@@ -27,5 +27,7 @@
 + (NSString *)lastDigits:(NSString *)number;
 + (NSString *)mask:(NSString *)number;
 + (bool) is_matchingType:(NSString *)number type:(NSString *)type;
++ (NSString*) number:(NSString*)number withSeperator:(NSString*)seperator;
++ (int) expectedCardNumberLength:(NSString*)number;
 
 @end

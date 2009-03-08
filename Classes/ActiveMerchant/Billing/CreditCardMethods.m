@@ -131,6 +131,9 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 
 + (NSString *)getTypeWithPartialNumber:(NSString *)partialNumber
 {
+	if ([NSString is_blank:partialNumber])
+		return nil;
+	
 	NSString *fullNumber15 = [partialNumber  stringByPaddingToLength:15 withString:@"0" startingAtIndex:0];
 	assert([fullNumber15 length] == 15);
 	
@@ -164,5 +167,26 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 	return [[BillingCreditCard getType:number] isEqualToString:type];
 }
 
++ (NSString*) number:(NSString*)number withSeperator:(NSString*)seperator
+{
+	if ([[[self class] getTypeWithPartialNumber:number] isEqualToString:@"american_express"]) {
+		NSMutableString *text = [NSMutableString stringWithString:[number substringWithRange:NSMakeRange(0, [number length] > 15 ? 15 : [number length])]];
+		[text replaceOccurrencesOfRegex:@"^(\\d{4})" withString:[NSString stringWithFormat:@"$1%@", seperator]];
+		[text replaceOccurrencesOfRegex:[NSString stringWithFormat:@"^(.{%d}\\d{6})",[seperator length]+4] withString:[NSString stringWithFormat:@"$1%@", seperator]];
+		return text;
+	}
+
+	NSMutableString *text = [NSMutableString stringWithString:[number substringWithRange:NSMakeRange(0, [number length] > 16 ? 16 : [number length])]];
+	[text replaceOccurrencesOfRegex:@"(\\d{4})" withString:[NSString stringWithFormat:@"$1%@", seperator]];
+	return text;
+}
+
++ (int) expectedCardNumberLength:(NSString*)number
+{
+	if ([[[self class] getTypeWithPartialNumber:number] isEqualToString:@"american_express"]) {
+		return 15;
+	}
+	return 16;
+}
 
 @end
