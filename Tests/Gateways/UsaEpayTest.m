@@ -1,50 +1,50 @@
 //
-//  AuthorizeNet.m
+//  UsaEpayTest.m
 //  objective_merchant
 //
-//  Created by Joshua Krall on 2/9/09.
+//  Created by Joshua Krall on 7/9/09.
 //  Copyright 2009 TransFS.com. All rights reserved.
 //
 
-#import "AuthorizeNetTest.h"
+#import "UsaEpayTest.h"
 #import "objCFixes.h"
 #import "Base.h"
 #import "CreditCard.h"
 #import "Response.h"
-#import "AuthorizeNetGateway.h"
+#import "UsaEpayGateway.h"
 
-@implementation AuthorizeNetTest
+@implementation UsaEpayTest
 
 - (void) setUp
 {
 	NSString *errorDesc = nil;
 	NSPropertyListFormat format;
 	NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
-	NSString *plistPath = [thisBundle pathForResource:@"Authorize.Net.Test" ofType:@"plist"];
+	NSString *plistPath = [thisBundle pathForResource:@"UsaEpay.Test" ofType:@"plist"];
 	NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
 	NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
 										  propertyListFromData:plistXML
 										  mutabilityOption:NSPropertyListMutableContainersAndLeaves
 										  format:&format errorDescription:&errorDesc];
 	if (!temp) {
-		[NSException raise:@"Authorize.Net Init, PList Error" format:errorDesc];
+		[NSException raise:@"UsaEpay Init, PList Error" format:errorDesc];
 		[errorDesc release];
 	}
-	authorizeNetOptions = [NSMutableDictionary dictionaryWithDictionary:temp];
+	usaEpayOptions = [NSMutableDictionary dictionaryWithDictionary:temp];
 }
 
 - (void) tearDown
 {
-    [authorizeNetOptions release];
+    [usaEpayOptions release];
 }
 
-- (void) testAuthorizeGatewayNoAvs
+- (void) testGatewayNoAvs
 {
 	BillingResponse *response;
-	if ((CFBooleanRef)[authorizeNetOptions objectForKey:@"testMode"] == kCFBooleanTrue)
+	if ((CFBooleanRef)[usaEpayOptions objectForKey:@"testMode"] == kCFBooleanTrue)
 		[BillingBase setGatewayMode:Test];
 
-	NSDictionary *cardOptions = [authorizeNetOptions objectForKey:@"creditCard"];
+	NSDictionary *cardOptions = [usaEpayOptions objectForKey:@"creditCard"];
 	BillingCreditCard *card = [[BillingCreditCard alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
 															   [cardOptions objectForKey:@"number"], @"number",
 															   (NSNumber*)[cardOptions objectForKey:@"month"], @"month",
@@ -56,23 +56,18 @@
 
 	if ([card is_valid])
 	{
-		AuthorizeNetGateway *gateway = [[AuthorizeNetGateway alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
-																		  [authorizeNetOptions objectForKey:@"login"], @"login",
-																		  [authorizeNetOptions objectForKey:@"tran_key"], @"password",
+		UsaEpayGateway *gateway = [[UsaEpayGateway alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
+																		  [usaEpayOptions objectForKey:@"sourcekey"], @"login",
 																		  nil]];
 
-		response = [gateway authorize:MakeInt(200) creditcard:card options:[[NSDictionary alloc] init]];
+		response = [gateway authorize:MakeFloat(2.00) creditcard:card options:[[NSDictionary alloc] init]];
 		if (![response is_success])
-			[NSException raise:@"Authorize.Net Gateway Error, authorize:" format:[response message]];
+			[NSException raise:@"UsaPaypal Gateway Error, authorize:" format:[response message]];
 		else {
 
-			response = [gateway capture:MakeInt(200) authorization:[response authorization] options:[[NSDictionary alloc] init]];
+			response = [gateway capture:MakeFloat(2.00) authorization:[response authorization] options:[[NSDictionary alloc] init]];
 			if (![response is_success])
-				[NSException raise:@"Authorize.Net Gateway Error, capture:" format:[response message]];
-
-			response = [gateway voidAuthorization:[response authorization] options:[[NSDictionary alloc] init]];
-			if (![response is_success])
-				[NSException raise:@"Authorize.Net Gateway Error, void:" format:[response message]];
+				[NSException raise:@"UsaPaypal Gateway Error, capture:" format:[response message]];
 		}
 	}
 	else
@@ -85,13 +80,13 @@
 
 
 
-- (void) testAuthorizeGatewayWithAvs
+- (void) testGatewayWithAvs
 {
 	BillingResponse *response;
-	if ((CFBooleanRef)[authorizeNetOptions objectForKey:@"testMode"] == kCFBooleanTrue)
+	if ((CFBooleanRef)[usaEpayOptions objectForKey:@"testMode"] == kCFBooleanTrue)
 		[BillingBase setGatewayMode:Test];
 
-	NSDictionary *cardOptions = [authorizeNetOptions objectForKey:@"creditCard"];
+	NSDictionary *cardOptions = [usaEpayOptions objectForKey:@"creditCard"];
 	BillingCreditCard *card = [[BillingCreditCard alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
 															   [cardOptions objectForKey:@"number"], @"number",
 															   (NSNumber*)[cardOptions objectForKey:@"month"], @"month",
@@ -103,9 +98,8 @@
 
 	if ([card is_valid])
 	{
-		AuthorizeNetGateway *gateway = [[AuthorizeNetGateway alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
-																		  [authorizeNetOptions objectForKey:@"login"], @"login",
-																		  [authorizeNetOptions objectForKey:@"tran_key"], @"password",
+		UsaEpayGateway *gateway = [[UsaEpayGateway alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
+																		  [usaEpayOptions objectForKey:@"sourcekey"], @"login",
 																		  nil]];
 
 		NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
@@ -114,18 +108,14 @@
 		[options setObject:@"Chicago" forKey:@"city"];
 		[options setObject:@"IL" forKey:@"state"];
 
-		response = [gateway authorize:MakeInt(250) creditcard:card options:[NSDictionary dictionaryWithObject:options forKey:@"address"]];
+		response = [gateway authorize:MakeFloat(2.50) creditcard:card options:[NSDictionary dictionaryWithObject:options forKey:@"address"]];
 		if (![response is_success])
-			[NSException raise:@"Authorize.Net Gateway Error, authorize:" format:[response message]];
+			[NSException raise:@"UsaPaypal Gateway Error, authorize:" format:[response message]];
 		else {
 
-			response = [gateway capture:MakeInt(250) authorization:[response authorization] options:[[NSDictionary alloc] init]];
+			response = [gateway capture:MakeFloat(2.50) authorization:[response authorization] options:[[NSDictionary alloc] init]];
 			if (![response is_success])
-				[NSException raise:@"Authorize.Net Gateway Error, capture:" format:[response message]];
-
-			response = [gateway voidAuthorization:[response authorization] options:[[NSDictionary alloc] init]];
-			if (![response is_success])
-				[NSException raise:@"Authorize.Net Gateway Error, void:" format:[response message]];
+				[NSException raise:@"UsaPaypal Gateway Error, capture:" format:[response message]];
 		}
 	}
 	else

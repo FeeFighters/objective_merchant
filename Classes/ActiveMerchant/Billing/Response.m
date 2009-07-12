@@ -32,7 +32,7 @@
 	return success;
 }
 
-- (bool) is_test
+- (bool) isTest
 {
 	return test;	
 }

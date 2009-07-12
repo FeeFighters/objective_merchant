@@ -27,7 +27,7 @@
 
 - (id) init:(NSDictionary *)options;
 - (NSString *) cardBrand:(id)source;
-- (bool) is_test;
+- (bool) isTest;
 
 //
 // "Private" methods

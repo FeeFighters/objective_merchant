@@ -47,7 +47,7 @@ static BillingModes _BillingBase_integrationMode = Production;
 	_BillingBase_gatewayMode = mode;	
 }
 
-+ (bool)is_test_mode
++ (bool)isTest_mode
 {
 	return (_BillingBase_gatewayMode == Test);
 }

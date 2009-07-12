@@ -3,7 +3,7 @@
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/14/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 TransFS.com. All rights reserved.
 //
 
 #import "BogusTest.h"
@@ -20,12 +20,12 @@
 {
 	gateway = [[BogusGateway alloc] init:[NSDictionary dictionaryWithObjectsAndKeys:
 										  @"bogus", @"login",
-										  @"bogus", @"password", 
+										  @"bogus", @"password",
 										  nil]];
-	
+
 	creditCard = [GatewayTestHelper buildCreditCard:@"1" options:nil];
-	
-	response = [[BillingResponse alloc] init:true message:@"Transaction successful" 
+
+	response = [[BillingResponse alloc] init:true message:@"Transaction successful"
 									  params:[NSDictionary dictionaryWithObject:@"53433" forKey:@"transid"]
 									 options:[[NSDictionary alloc] init]];
 }

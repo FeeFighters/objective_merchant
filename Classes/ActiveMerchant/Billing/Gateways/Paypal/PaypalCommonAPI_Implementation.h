@@ -134,11 +134,11 @@
 				NSEnumerator *errorEnumerator = [[childNode children] objectEnumerator];
 				while (childError = [errorEnumerator nextObject]) 
 				{
-					if ([[childError name] isEqualToString:@"LongMessage"] && ![NSString is_blank:[childError stringValue]])
+					if ([[childError name] isEqualToString:@"LongMessage"] && ![NSString isBlank:[childError stringValue]])
 						longMessage = [childError stringValue];
-					else if ([[childError name] isEqualToString:@"ShortMessage"] && ![NSString is_blank:[childError stringValue]])
+					else if ([[childError name] isEqualToString:@"ShortMessage"] && ![NSString isBlank:[childError stringValue]])
 						shortMessage = [childError stringValue];
-					else if ([[childError name] isEqualToString:@"ErrorCode"] && ![NSString is_blank:[childError stringValue]])
+					else if ([[childError name] isEqualToString:@"ErrorCode"] && ![NSString isBlank:[childError stringValue]])
 						[errorCodes addObject:[childError stringValue]];
 				}
 								
@@ -244,7 +244,7 @@
 	[xmlCredentials addChild:[GDataXMLElement elementWithName:@"Username" stringValue:[options objectForKey:@"login"]]];
 	[xmlCredentials addChild:[GDataXMLElement elementWithName:@"Password" stringValue:[options objectForKey:@"password"]]];
 	[xmlCredentials addChild:[GDataXMLElement elementWithName:@"Subject" stringValue:[options objectForKey:@"subject"]]];
-	if (![NSString is_blank:[options objectForKey:@"signature"]])
+	if (![NSString isBlank:[options objectForKey:@"signature"]])
 		[xmlCredentials addChild:[GDataXMLElement elementWithName:@"Signature" stringValue:[options objectForKey:@"signature"]]];	
 
 	[xmlRoot addChild:xmlCredentials];
@@ -261,7 +261,7 @@
 	[xmlAddress addChild:[GDataXMLNode elementWithName:@"n2:Street1" stringValue:[address objectForKey:@"address1"]]];
 	[xmlAddress addChild:[GDataXMLNode elementWithName:@"n2:Street2" stringValue:[address objectForKey:@"address2"]]];
 	[xmlAddress addChild:[GDataXMLNode elementWithName:@"n2:CityName" stringValue:[address objectForKey:@"city"]]];
-	if ([NSString is_blank:[address objectForKey:@"state"]])
+	if ([NSString isBlank:[address objectForKey:@"state"]])
 		[xmlAddress addChild:[GDataXMLNode elementWithName:@"n2:StateOrProvince" stringValue:@"N/A"]];
 	else
 		[xmlAddress addChild:[GDataXMLNode elementWithName:@"n2:StateOrProvince" stringValue:[address objectForKey:@"state"]]];
@@ -274,9 +274,9 @@
 
 - (NSString*) endpointUrl
 {
-	NSString* certOrSig = ([NSString is_blank:[options objectForKey:@"signature"]]) ? @"certificate" : @"signature";
+	NSString* certOrSig = ([NSString isBlank:[options objectForKey:@"signature"]]) ? @"certificate" : @"signature";
 	
-	if ([self is_test])
+	if ([self isTest])
 		return [[[[self class] URLS] objectForKey:@"test"] objectForKey:certOrSig];
 	return [[[[self class] URLS] objectForKey:@"live"] objectForKey:certOrSig];
 }
@@ -291,7 +291,7 @@
 	BillingResponse* br = [self buildResponse:[self is_successful:response] 
 									  message:[self messageFrom:response] params:response 
 									  options:[NSDictionary dictionaryWithObjectsAndKeys:
-												   MakeBool([self is_test]), @"test",
+												   MakeBool([self isTest]), @"test",
 												   [self authorizationFrom:response], @"authorization",
 												   [self is_fraudReview:response], @"fraudReview",
 												   nilToNull([NSDictionary dictionaryWithObject:nilToNull([response objectForKey:@"avsCode"]) forKey:@"code"]), @"avsResult",
@@ -451,11 +451,11 @@ static NSString* _paypalcommonapi_defaultCurrency = nil;
 	return [super init:_options];
 }
 
-- (bool) is_test
+- (bool) isTest
 {
 	if ([options objectForKey:@"test"])
 		return true;
-	return [super is_test];
+	return [super isTest];
 }
 
 - (BillingResponse*) reauthorize:(id)money authorization:(NSString*)authorization options:(NSDictionary*)_options

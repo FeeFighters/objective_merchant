@@ -3,7 +3,7 @@
 //  objective_merchant
 //
 //  Created by Joshua Krall on 2/14/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 TransFS.com. All rights reserved.
 //
 
 #import "GatewayTestHelper.h"
@@ -17,7 +17,7 @@
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	NSDateComponents *dateComponents = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:today];
 	int todayYear = [dateComponents year];
-	
+
 	NSMutableDictionary *attrs = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 									number, @"number",
 									MakeInt(9), @"month",
@@ -27,10 +27,10 @@
 									@"123", @"verificationValue",
 									@"visa", @"type",
 								  nil];
-	
+
 	if (options!=nil)
 		[attrs addEntriesFromDictionary:options];
-	
+
 	return [[BillingCreditCard alloc] init:attrs];
 }
 

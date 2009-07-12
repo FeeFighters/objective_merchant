@@ -16,7 +16,7 @@
 - (id) init:(NSString *)_code
 {
 	code = nil;
-	if (![NSString is_blank:_code])
+	if (![NSString isBlank:_code])
 		code = [NSString stringWithString:[_code uppercaseString]];
 	message = [[BillingCvvResult messages] objectForKey:code];
 	return self;

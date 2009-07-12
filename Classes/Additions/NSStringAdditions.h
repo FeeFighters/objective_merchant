@@ -16,8 +16,8 @@
 
 @interface NSString (RubyAdditions)
 
-- (bool) is_blank;
-+ (bool) is_blank:(NSString *)str;
+- (bool) isBlank;
++ (bool) isBlank:(NSString *)str;
 - (NSString *) capitalizeFirstLetter;
 - (NSString *) lowercaseFirstLetter;
 - (NSString *) toCamelcase;
@@ -25,6 +25,6 @@
 
 @end
 
-@interface NSString (RegexKitLiteEnumeratorAdditions) 
+@interface NSString (RegexKitLiteEnumeratorAdditions)
 	- (NSEnumerator *)matchEnumeratorWithRegex:(NSString *)regex;
 @end

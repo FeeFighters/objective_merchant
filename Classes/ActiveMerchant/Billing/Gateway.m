@@ -28,7 +28,7 @@
 	return [BillingGateway cardBrand:source];
 }
 		
-- (bool) is_test
+- (bool) isTest
 {
 	return ([BillingBase gatewayMode] == Test);
 }
@@ -67,7 +67,7 @@
 
 - (bool) requiresStartDateOrIssueNumber:(NSString *)creditCard
 {
-	if ([NSString is_blank:[self cardBrand:creditCard]])
+	if ([NSString isBlank:[self cardBrand:creditCard]])
 		return false;
 	
 	NSArray *debitCardTypes = [NSArray arrayWithObjects:@"switch", @"solo"];

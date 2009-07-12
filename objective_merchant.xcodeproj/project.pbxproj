@@ -16,6 +16,13 @@
 		1D36BF3D0F46A608004D1B49 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36BF3B0F46A608004D1B49 /* GDataXMLNode.m */; };
 		1D36BF490F46ABBC004D1B49 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D36BF480F46ABBC004D1B49 /* libxml2.dylib */; };
 		1D36BF4C0F46AC35004D1B49 /* GDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D36BF4B0F46AC35004D1B49 /* GDataDefines.h */; };
+		1D3F522F100963B000D00C00 /* UsaEpayGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3F522C100963A700D00C00 /* UsaEpayGateway.h */; };
+		1D3F5230100963B000D00C00 /* UsaEpayGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F522D100963A700D00C00 /* UsaEpayGateway.m */; };
+		1D3F528410098B0200D00C00 /* UsaEpayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F528310098B0200D00C00 /* UsaEpayTest.m */; };
+		1D3F528710098B0F00D00C00 /* UsaEpay.Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F528510098B0F00D00C00 /* UsaEpay.Test.plist */; };
+		1D3F528810098B0F00D00C00 /* UsaEpay.Test.Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F528610098B0F00D00C00 /* UsaEpay.Test.Sample.plist */; };
+		1D3F52CB100993C400D00C00 /* NSNullAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3F52C9100993C400D00C00 /* NSNullAdditions.h */; };
+		1D3F52CC100993C400D00C00 /* NSNullAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F52CA100993C400D00C00 /* NSNullAdditions.m */; };
 		1D4A106D0F3E8AEF00F61A30 /* CreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */; };
 		1D4A106E0F3E8AEF00F61A30 /* CreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */; };
 		1D4A10F70F3EB1BD00F61A30 /* CreditCardMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */; };
@@ -101,6 +108,14 @@
 		1D36BF3B0F46A608004D1B49 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		1D36BF480F46ABBC004D1B49 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
 		1D36BF4B0F46AC35004D1B49 /* GDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataDefines.h; sourceTree = "<group>"; };
+		1D3F522C100963A700D00C00 /* UsaEpayGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsaEpayGateway.h; sourceTree = "<group>"; };
+		1D3F522D100963A700D00C00 /* UsaEpayGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsaEpayGateway.m; sourceTree = "<group>"; };
+		1D3F528210098B0200D00C00 /* UsaEpayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsaEpayTest.h; sourceTree = "<group>"; };
+		1D3F528310098B0200D00C00 /* UsaEpayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsaEpayTest.m; sourceTree = "<group>"; };
+		1D3F528510098B0F00D00C00 /* UsaEpay.Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UsaEpay.Test.plist; sourceTree = "<group>"; };
+		1D3F528610098B0F00D00C00 /* UsaEpay.Test.Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UsaEpay.Test.Sample.plist; sourceTree = "<group>"; };
+		1D3F52C9100993C400D00C00 /* NSNullAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNullAdditions.h; sourceTree = "<group>"; };
+		1D3F52CA100993C400D00C00 /* NSNullAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNullAdditions.m; sourceTree = "<group>"; };
 		1D4A106B0F3E8AEF00F61A30 /* CreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCard.h; sourceTree = "<group>"; };
 		1D4A106C0F3E8AEF00F61A30 /* CreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCard.m; sourceTree = "<group>"; };
 		1D4A10F50F3EB1BD00F61A30 /* CreditCardMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardMethods.h; sourceTree = "<group>"; };
@@ -286,6 +301,8 @@
 		1D9061BD0F3FD54F00C211A1 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				1D3F522C100963A700D00C00 /* UsaEpayGateway.h */,
+				1D3F522D100963A700D00C00 /* UsaEpayGateway.m */,
 				1D91A2AE0F5C8D4600792E8B /* Paypal */,
 				1D91A2AA0F5C8D3B00792E8B /* PaypalGateway.h */,
 				1D91A2AB0F5C8D3B00792E8B /* PaypalGateway.m */,
@@ -300,6 +317,10 @@
 		1D9063600F40E85000C211A1 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				1D3F528510098B0F00D00C00 /* UsaEpay.Test.plist */,
+				1D3F528610098B0F00D00C00 /* UsaEpay.Test.Sample.plist */,
+				1D3F528210098B0200D00C00 /* UsaEpayTest.h */,
+				1D3F528310098B0200D00C00 /* UsaEpayTest.m */,
 				1D91A4250F5ECE8A00792E8B /* Paypal.Test.plist */,
 				1D91A4240F5ECBD000792E8B /* Paypal.Test.Sample.plist */,
 				1D91A4210F5ECBC400792E8B /* PaypalTest.h */,
@@ -329,6 +350,8 @@
 		1D976EA20F3F5DF600E77C6D /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				1D3F52C9100993C400D00C00 /* NSNullAdditions.h */,
+				1D3F52CA100993C400D00C00 /* NSNullAdditions.m */,
 				1D976EA40F3F5DF600E77C6D /* NSArrayAdditions.m */,
 				1D976EA50F3F5DF600E77C6D /* NSStringAdditions.h */,
 				1D976EA60F3F5DF600E77C6D /* NSStringAdditions.m */,
@@ -451,6 +474,8 @@
 				1D91A2B00F5C8D4600792E8B /* PaypalCommonAPI.h in Headers */,
 				1D91A2C30F5D1BDE00792E8B /* PaypalCommonAPI_Implementation.h in Headers */,
 				1D91A2D30F5D213100792E8B /* PaypalCommonAPI_Private.h in Headers */,
+				1D3F522F100963B000D00C00 /* UsaEpayGateway.h in Headers */,
+				1D3F52CB100993C400D00C00 /* NSNullAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +546,8 @@
 			files = (
 				1DCE22430F46775400F2FE6F /* Authorize.Net.Test.plist in Resources */,
 				1D91A4260F5ECE8A00792E8B /* Paypal.Test.plist in Resources */,
+				1D3F528710098B0F00D00C00 /* UsaEpay.Test.plist in Resources */,
+				1D3F528810098B0F00D00C00 /* UsaEpay.Test.Sample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +587,7 @@
 				1D91A4230F5ECBC400792E8B /* PaypalTest.m in Sources */,
 				1D91A53A0F5EE58800792E8B /* GDataXMLNodeAdditions.m in Sources */,
 				1D91A7300F5F5AE000792E8B /* AuthorizeNetTest.m in Sources */,
+				1D3F528410098B0200D00C00 /* UsaEpayTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +614,8 @@
 				1D36BEB50F4692CD004D1B49 /* BogusGateway.m in Sources */,
 				1D36BF3D0F46A608004D1B49 /* GDataXMLNode.m in Sources */,
 				1D91A2AD0F5C8D3B00792E8B /* PaypalGateway.m in Sources */,
+				1D3F5230100963B000D00C00 /* UsaEpayGateway.m in Sources */,
+				1D3F52CC100993C400D00C00 /* NSNullAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

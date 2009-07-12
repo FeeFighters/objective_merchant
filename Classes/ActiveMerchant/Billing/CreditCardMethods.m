@@ -48,7 +48,7 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 
 + (bool) is_validTestModeCardNumber:(NSString *)number
 {
-	if ([BillingBase is_test_mode]) 
+	if ([BillingBase isTest_mode]) 
 	{
 		if ([number isEqualToString:@"1"]) return true;
 		if ([number isEqualToString:@"2"]) return true;
@@ -131,7 +131,7 @@ static NSDictionary* _BillingCreditCard_cardCompanies = nil;
 
 + (NSString *)getTypeWithPartialNumber:(NSString *)partialNumber
 {
-	if ([NSString is_blank:partialNumber])
+	if ([NSString isBlank:partialNumber])
 		return nil;
 	
 	NSString *fullNumber15 = [partialNumber  stringByPaddingToLength:15 withString:@"0" startingAtIndex:0];

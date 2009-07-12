@@ -35,11 +35,11 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 }
 - (bool) has_firstName
 {
-	return ![NSString is_blank:firstName];
+	return ![NSString isBlank:firstName];
 }
 - (bool) has_lastName
 {
-	return ![NSString is_blank:lastName];
+	return ![NSString isBlank:lastName];
 }
 - (NSString *) name
 {
@@ -48,7 +48,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 
 - (bool) has_verificationValue
 {
-	return ![NSString is_blank:verificationValue];
+	return ![NSString isBlank:verificationValue];
 }
 
 - (NSString *) displayNumber
@@ -67,7 +67,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 - (void) beforeValidate
 {
 	[number replaceOccurrencesOfRegex:@"[^0-9]" withString:@""];
-	if ([NSString is_blank:type]) {
+	if ([NSString isBlank:type]) {
 		NSString* temp = [BillingCreditCard getType:number];
 		if (temp==nil) temp = @"";
 		type = [NSString stringWithString:temp];
@@ -77,7 +77,7 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 }
 - (void) validateCardType
 {
-	if ([NSString is_blank:type])
+	if ([NSString isBlank:type])
 		[_errors add:@"type" error:@"is required"];
 
 	if ([[BillingCreditCard cardCompanies] objectForKey:type]==nil)
@@ -96,15 +96,15 @@ static bool _BillingCreditCard_requireVerificationValue = true;
 }
 - (void) validateEssentialAttributes
 {
-	if ([NSString is_blank:firstName]) [_errors add:@"firstName" error:@"cannot be empty"];
-	if ([NSString is_blank:lastName]) [_errors add:@"lastName" error:@"cannot be empty"];
+	if ([NSString isBlank:firstName]) [_errors add:@"firstName" error:@"cannot be empty"];
+	if ([NSString isBlank:lastName]) [_errors add:@"lastName" error:@"cannot be empty"];
 	if (![self is_validMonth:month]) [_errors add:@"month" error:@"is not a valid month"];
 	if ([self is_expired]) [_errors add:@"card" error:@"is expired"];
 	if (![self is_validExpiryYear:year]) [_errors add:@"year" error:@"is not a valid year"];	
 }
 - (void) validateVerificationValue
 {
-	if ([BillingCreditCard requiresVerificationValue] && [NSString is_blank:verificationValue])
+	if ([BillingCreditCard requiresVerificationValue] && [NSString isBlank:verificationValue])
 		[_errors add:@"verificationValue" error:@"is required"];						
 }
 - (void) validateSwitchOrSoloAttributes

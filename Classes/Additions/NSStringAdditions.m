@@ -7,23 +7,25 @@
 //
 
 #import "NSStringAdditions.h"
+#import "NSNullAdditions.h"
 #import "RegexKitLite.h"
 
 @implementation NSString (RubyAdditions)
 
-- (bool) is_blank
+- (bool) isBlank
 {
+	if ([NSNull isNull:self]) return false;
 	return ([self length] == 0);
 }
 
-+ (bool) is_blank:(NSString *)str
++ (bool) isBlank:(NSString *)str
 {
-	return (str==nil || [str isKindOfClass:[NSNull class]] || [str is_blank]);
+	return (str==nil || [NSNull isNull:str] || [str isBlank]);
 }
 
 - (NSString *) capitalizeFirstLetter
 {
-	return [NSString stringWithFormat:@"%@%@", 
+	return [NSString stringWithFormat:@"%@%@",
 				[[self substringWithRange:NSMakeRange(0, 1)] uppercaseString],
 				[self substringWithRange:NSMakeRange(1, [self length]-1)]
 			];
@@ -32,7 +34,7 @@
 
 - (NSString *) capitalizeLastLetter
 {
-return [NSString stringWithFormat:@"%@%@", 
+return [NSString stringWithFormat:@"%@%@",
 		[self substringWithRange:NSMakeRange(0, [self length]-1)],
 		[[self substringWithRange:NSMakeRange([self length]-1, 1)] uppercaseString]
 		];
@@ -45,7 +47,7 @@ return [NSString stringWithFormat:@"%@%@",
 
 - (NSString *) lowercaseFirstLetter
 {
-	return [NSString stringWithFormat:@"%@%@", 
+	return [NSString stringWithFormat:@"%@%@",
 			[[self substringWithRange:NSMakeRange(0, 1)] lowercaseString],
 			[self substringWithRange:NSMakeRange(1, [self length]-1)]
 			];
@@ -63,43 +65,43 @@ return [NSString stringWithFormat:@"%@%@",
 
 @end
 
-@interface RKLMatchEnumerator : NSEnumerator { 
-	NSString *string; 
-	NSString *regex; 
-	NSUInteger location; 
+@interface RKLMatchEnumerator : NSEnumerator {
+	NSString *string;
+	NSString *regex;
+	NSUInteger location;
 }
-- (id)initWithString:(NSString *)initString regex:(NSString *)initRegex; 
+- (id)initWithString:(NSString *)initString regex:(NSString *)initRegex;
 
 @end
-		
+
 @implementation RKLMatchEnumerator
 - (id)initWithString:(NSString *)initString regex:(NSString *)initRegex
 {
-	if ((self = [self init]) == NULL) { return(NULL); } 
-	string = [initString copy]; regex = [initRegex copy]; 
+	if ((self = [self init]) == NULL) { return(NULL); }
+	string = [initString copy]; regex = [initRegex copy];
 	return(self);
 }
 - (id)nextObject
 {
-	if(location != NSNotFound) { 
-		NSRange searchRange = NSMakeRange(location, [string length] - location);  
-		NSRange matchedRange = [string rangeOfRegex:regex inRange:searchRange];  
-		location = NSMaxRange(matchedRange) + ((matchedRange.length == 0) ? 1 : 0);  
-		if(matchedRange.location != NSNotFound) { return([string substringWithRange:matchedRange]); } 
-	} 
-	return(NULL); 
+	if(location != NSNotFound) {
+		NSRange searchRange = NSMakeRange(location, [string length] - location);
+		NSRange matchedRange = [string rangeOfRegex:regex inRange:searchRange];
+		location = NSMaxRange(matchedRange) + ((matchedRange.length == 0) ? 1 : 0);
+		if(matchedRange.location != NSNotFound) { return([string substringWithRange:matchedRange]); }
+	}
+	return(NULL);
 }
-- (void) dealloc 
-{ 
-	[string release]; 
-	[regex release]; 
+- (void) dealloc
+{
+	[string release];
+	[regex release];
 	[super dealloc];
-} 
+}
 @end
 
 @implementation NSString (RegexKitLiteEnumeratorAdditions)
-- (NSEnumerator *)matchEnumeratorWithRegex:(NSString *)regex 
+- (NSEnumerator *)matchEnumeratorWithRegex:(NSString *)regex
 {
 	return([[[RKLMatchEnumerator alloc] initWithString:self regex:regex] autorelease]);
-} 
+}
 @end

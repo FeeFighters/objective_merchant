@@ -37,7 +37,7 @@
 
 - (id) init:(bool)success message:(NSString *)message params:(NSDictionary*)params options:(NSDictionary*)options;
 - (bool) is_success;
-- (bool) is_test;
+- (bool) isTest;
 - (bool) is_fraudReview;
 
 

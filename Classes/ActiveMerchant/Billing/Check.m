@@ -16,7 +16,7 @@
 
 - (NSString *) name
 {
-	if ([NSString is_blank:_name])
+	if ([NSString isBlank:_name])
 	{
 		_name = [NSString stringWithFormat:@"%s %s", firstName, lastName];
 	}
@@ -25,7 +25,7 @@
 
 - (void) setName:(NSString *)name 
 {
-	if ([NSString is_blank:_name])
+	if ([NSString isBlank:_name])
 		return;
 	
 	_name = name;
@@ -38,21 +38,21 @@
 
 - (void) validate
 {
-	if ([NSString is_blank:_name])
+	if ([NSString isBlank:_name])
 		[_errors add:@"name" error:@"cannot be empty"];
-	if ([NSString is_blank:routingNumber])
+	if ([NSString isBlank:routingNumber])
 		[_errors add:@"routingNumber" error:@"cannot be empty"];
-	if ([NSString is_blank:accountNumber])
+	if ([NSString isBlank:accountNumber])
 		[_errors add:@"accountNumber" error:@"cannot be empty"];
 
 	if (![self is_validRoutingNumber])
 		[_errors add:@"routingNumber" error:@"is invalid"];
 
-	if ( ![NSString is_blank:accountHolderType] && 
+	if ( ![NSString isBlank:accountHolderType] && 
 		 !([accountHolderType isEqualToString:@"business"] || [accountHolderType isEqualToString:@"personal"]) )
 		[_errors add:@"accountHolderType" error:@"must be personal or business"];
 
-	if ( ![NSString is_blank:accountType] && 
+	if ( ![NSString isBlank:accountType] && 
 		!([accountType isEqualToString:@"checking"] || [accountType isEqualToString:@"savings"]) )
 		[_errors add:@"accountType" error:@"must be checking or savings"];
 }

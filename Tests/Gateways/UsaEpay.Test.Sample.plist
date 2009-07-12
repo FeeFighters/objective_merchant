@@ -3,25 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>testMode</key>
-	<false/>
+	<true/>
 	<key>creditCard</key>
 	<dict>
 		<key>cvv</key>
-		<string>341</string>
+		<string>666</string>
 		<key>lastName</key>
-		<string>Harper</string>
+		<string>Krall</string>
 		<key>firstName</key>
-		<string>Sean</string>
+		<string>Joshua</string>
 		<key>year</key>
 		<integer>2012</integer>
 		<key>month</key>
 		<integer>1</integer>
 		<key>number</key>
-		<string>5322211735971015</string>
+		<string>4111111111111111</string>
 	</dict>
-	<key>login</key>
-	<string>colormatch03</string>
-	<key>tran_key</key>
-	<string>GDcaTHnMhTCdqcT9</string>
+	<key>sourcekey</key>
+	<string>source key</string>
 </dict>
 </plist>

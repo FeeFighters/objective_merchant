@@ -188,7 +188,7 @@
 	//# Only activate the test_request when the :test option is passed in	
 	[parameters setObject:([options objectForKey:@"test"] ? @"TRUE" : @"FALSE") forKey:@"testRequest"];
 	
-	NSString *url = [self is_test] ? [[self class] testUrl] : [[self class] liveUrl];
+	NSString *url = [self isTest] ? [[self class] testUrl] : [[self class] liveUrl];
 	NSString *postDataParms = [self postData:action parameters:parameters];
 	NSString *data = [self sslPost:url data:postDataParms headers:[[NSMutableDictionary alloc] init]];
 	
@@ -201,7 +201,7 @@
 	//# It usually looks something like this
 	//#
 	//#   (TESTMODE) Successful Sale
-	bool testMode = [self is_test] || [message isMatchedByRegex:@"TESTMODE"];
+	bool testMode = [self isTest] || [message isMatchedByRegex:@"TESTMODE"];
 	
 	NSDictionary *optionshash = [NSDictionary dictionaryWithObjectsAndKeys:
 								 MakeBool(testMode), @"test",
@@ -258,7 +258,7 @@
 	enumerator = [post keyEnumerator];
 	while (curKey = [enumerator nextObject]) {
 		NSString *curObj = [post objectForKey:curKey];
-		if (![NSString is_blank:curObj])
+		if (![NSString isBlank:curObj])
 			[requestArray addObject:[NSString stringWithFormat:@"x_%@=%@", curKey, [curObj stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 	}
 	NSString *joinedStr = [requestArray componentsJoinedByString:@"&"];
@@ -351,7 +351,7 @@
 		[post setObject:nilToNull([address objectForKey:@"zip"]) forKey:@"zip"];		
 		[post setObject:nilToNull([address objectForKey:@"city"]) forKey:@"city"];		
 		[post setObject:nilToNull([address objectForKey:@"country"]) forKey:@"country"];		
-		if ([NSString is_blank:[address objectForKey:@"state"]])
+		if ([NSString isBlank:[address objectForKey:@"state"]])
 			[post setObject:@"n/a" forKey:@"state"];
 		else
 			[post setObject:nilToNull([address objectForKey:@"state"]) forKey:@"state"];			

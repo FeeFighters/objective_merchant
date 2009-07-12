@@ -1,8 +1,8 @@
 //
-//  CreditCardFormatting.h
+//  NSNullAdditions.h
 //  objective_merchant
 //
-//  Created by Joshua Krall on 2/8/09.
+//  Created by Joshua Krall on 2/7/09.
 //  Copyright 2009 TransFS.com. All rights reserved.
 //
 
@@ -12,10 +12,8 @@
 #import <Cocoa/Cocoa.h>
 #endif
 
-#import "NSStringAdditions.h"
+@interface NSNull (TransFSAdditions)
 
-@protocol CreditCardFormatting
-
-- (NSString *) format:(NSNumber*)number option:(NSString*)option;
++ (bool) isNull:(id)obj;
 
 @end

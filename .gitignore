@@ -3,4 +3,5 @@
 build
 Tests/Gateways/Authorize.Net.Test.plist
 Tests/Gateways/Paypal.Test.plist
+Tests/Gateways/UsaEpay.Test.plist
 .DS_Store

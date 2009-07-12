@@ -113,7 +113,7 @@
 	[xml_n2_PaymentDetails addChild:[GDataXMLElement elementWithName:@"n2:NotifyURL" stringValue:[_options objectForKey:@"notifyUrl"]]];
 	[xml_n2_PaymentDetails addChild:[GDataXMLElement elementWithName:@"n2:OrderDescription" stringValue:[_options objectForKey:@"description"]]];	
 	[xml_n2_PaymentDetails addChild:[GDataXMLElement elementWithName:@"n2:InvoiceID" stringValue:[_options objectForKey:@"orderId"]]];
-	if (![NSString is_blank:[BillingGateway applicationId]]) {
+	if (![NSString isBlank:[BillingGateway applicationId]]) {
 		[xml_n2_PaymentDetails addChild:[GDataXMLElement elementWithName:@"n2:ButtonSource" stringValue:[[BillingGateway applicationId] substringWithRange:NSMakeRange(0, ([[BillingGateway applicationId] length] > 32) ? 32 : [[BillingGateway applicationId] length]) ]]];
 	}
 
@@ -145,11 +145,11 @@
 	if (	[[self cardBrand:creditcard] isEqualToString:@"switch"] ||
 			[[self cardBrand:creditcard] isEqualToString:@"solo"] )
 	{
-		if (![NSString is_blank:[creditcard.startMonth stringValue]])
+		if (![NSString isBlank:[creditcard.startMonth stringValue]])
 			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:StartMonth" stringValue:[self format:[creditcard.startMonth stringValue] option:@"twoDigits"]]];
-		if (![NSString is_blank:[creditcard.startYear stringValue]])
+		if (![NSString isBlank:[creditcard.startYear stringValue]])
 			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:StartYear" stringValue:[self format:[creditcard.startYear stringValue] option:@"fourDigits"]]];
-		if (![NSString is_blank:[creditcard.issueNumber stringValue]])
+		if (![NSString isBlank:[creditcard.issueNumber stringValue]])
 			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:IssueNumber" stringValue:[self format:[creditcard.issueNumber stringValue] option:@"twoDigits"]]];
 	}
 

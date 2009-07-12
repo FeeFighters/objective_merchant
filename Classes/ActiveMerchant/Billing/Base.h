@@ -31,6 +31,6 @@ typedef enum BillingModesEnum {
 + (BillingModes) mode;
 + (void)setMode:(BillingModes)mode;
 
-+ (bool)is_test_mode;
++ (bool)isTest_mode;
 
 @end

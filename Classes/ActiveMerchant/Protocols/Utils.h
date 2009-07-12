@@ -14,6 +14,7 @@
 
 #import "NSStringAdditions.h"
 #import "NSDataAdditions.h"
+#import "NSNullAdditions.h"
 
 @protocol Utils
 

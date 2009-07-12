@@ -30,7 +30,7 @@
 // Public Methods
 //
 - (id) init:(NSMutableDictionary *)_options;
-- (bool) is_test;
+- (bool) isTest;
 - (BillingResponse*) reauthorize:(id)money authorization:(NSString*)authorization options:(NSDictionary*)options;
 - (BillingResponse*) capture:(id)money authorization:(NSString*)authorization options:(NSDictionary*)options;
 //- (BillingResponse*) transfer:(...);
