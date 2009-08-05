@@ -27,6 +27,7 @@
 - (NSString *) GatewayUrl;
 
 + (NSString *) Url;
++ (NSString *) SandboxUrl;
 + (NSDictionary*) Transactions;
 
 @end

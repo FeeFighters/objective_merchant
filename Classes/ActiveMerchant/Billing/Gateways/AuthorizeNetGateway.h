@@ -62,4 +62,6 @@ typedef enum ResponseCodesEnum {
 + (NSString*)AuthorizeNetArbNamespace;
 + (NSDictionary*)RecurringActions;
 
++ (NSString *) moneyFormat;
+
 @end

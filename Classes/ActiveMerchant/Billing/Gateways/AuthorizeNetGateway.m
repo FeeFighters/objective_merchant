@@ -33,7 +33,7 @@
 
 
 //
-// Public 
+// Public
 //
 - (id) init:(NSMutableDictionary *)_options
 {
@@ -57,7 +57,7 @@
 	[self addCreditCard:post creditcard:creditcard];
 	[self addAddress:post options:_options];
 	[self addCustomerData:post options:_options];
-	[self addInvoice:post options:_options];	
+	[self addInvoice:post options:_options];
 	[self addDuplicateWindow:post];
 
 	return [self commit:@"AUTH_ONLY" money:money parameters:post];
@@ -78,7 +78,7 @@
 	[self addAddress:post options:_options];
 	[self addCustomerData:post options:_options];
 	[self addDuplicateWindow:post];
-	
+
 	return [self commit:@"AUTH_CAPTURE" money:money parameters:post];
 }
 
@@ -92,9 +92,9 @@
 {
 	NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
 	[post setObject:nilToNull(authorization) forKey:@"trans_id"];
-	
+
 	[self addCustomerData:post options:_options];
-	
+
 	return [self commit:@"PRIOR_AUTH_CAPTURE" money:money parameters:post];
 }
 
@@ -107,7 +107,7 @@
 {
 	NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
 	[post setObject:nilToNull(authorization) forKey:@"trans_id"];
-	
+
 	return [self commit:@"VOID" money:nil parameters:post];
 }
 
@@ -129,13 +129,13 @@
 - (BillingResponse *) credit:(id)money identification:(NSString*)identification options:(NSDictionary*)_options
 {
 	[self requires:_options, @"cardNumber", nil];
-	
+
 	NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
 	[post setObject:nilToNull(identification) forKey:@"trans_id"];
-	[post setObject:nilToNull([_options objectForKey:@"cardNumber"]) forKey:@"trans_id"];	
-	
+	[post setObject:nilToNull([_options objectForKey:@"cardNumber"]) forKey:@"trans_id"];
+
 	return [self commit:@"CREDIT" money:money parameters:post];
-}	
+}
 
 //# Create a recurring payment.
 //#
@@ -162,13 +162,13 @@
 //{
 //	[self requires:_options, @"interval", @"duration", @"billingAddress", nil];
 //	[self requires:[_options objectForKey:@"interval"], @"length", [NSArray arrayWithObjects:@"unit", @"days", @"months", nil], nil];
-//	[self requires:[_options objectForKey:@"duration"], @"startDate", @"occurrences", nil];	
-//	[self requires:[_options objectForKey:@"billingAddress"], @"firstName", @"lastName", nil];		
+//	[self requires:[_options objectForKey:@"duration"], @"startDate", @"occurrences", nil];
+//	[self requires:[_options objectForKey:@"billingAddress"], @"firstName", @"lastName", nil];
 //
 //	[_options setObject:nilToNull(creditcard) forKey:@"creditCard"];
 //	[_options setObject:nilToNull(money) forKey:@"money"];
 //
-//	
+//
 //	//	request = build_recurring_request(:create, options)
 //	//	recurring_commit(:create, request)
 //}
@@ -184,25 +184,25 @@
 {
 	if (![action isEqualToString:@"VOID"])
 		[parameters setObject:[self amount:money] forKey:@"amount"];
-	
-	//# Only activate the test_request when the :test option is passed in	
+
+	//# Only activate the test_request when the :test option is passed in
 	[parameters setObject:([options objectForKey:@"test"] ? @"TRUE" : @"FALSE") forKey:@"testRequest"];
-	
+
 	NSString *url = [self isTest] ? [[self class] testUrl] : [[self class] liveUrl];
 	NSString *postDataParms = [self postData:action parameters:parameters];
 	NSString *data = [self sslPost:url data:postDataParms headers:[[NSMutableDictionary alloc] init]];
-	
+
 	NSDictionary *response = [self parse:data];
-	
+
 	NSString *message = [self messageFrom:response];
-	
+
 	//# Return the response. The authorization can be taken out of the transaction_id
 	//# Test Mode on/off is something we have to parse from the response text.
 	//# It usually looks something like this
 	//#
 	//#   (TESTMODE) Successful Sale
 	bool testMode = [self isTest] || [message isMatchedByRegex:@"TESTMODE"];
-	
+
 	NSDictionary *optionshash = [NSDictionary dictionaryWithObjectsAndKeys:
 								 MakeBool(testMode), @"test",
 								 nilToNull([response objectForKey:@"transactionId"]), @"authorization",
@@ -218,13 +218,13 @@
 - (NSDictionary*) parse:(NSString*)body
 {
 	NSArray *fields = [self split:body];
-	
+
 	NSDictionary *results = [NSDictionary dictionaryWithObjectsAndKeys:
 							 nilToNull([fields objectAtIndex:ResponseCode]),		@"responseCode",
-							 nilToNull([fields objectAtIndex:ResponseReasonCode]),	@"responseReasonCode",	
-							 nilToNull([fields objectAtIndex:ResponseReasonText]),	@"responseReasonText",	
-							 nilToNull([fields objectAtIndex:AvsResultCode]),		@"avsResultCode",	
-							 nilToNull([fields objectAtIndex:TransactionId]),		@"transactionId",	
+							 nilToNull([fields objectAtIndex:ResponseReasonCode]),	@"responseReasonCode",
+							 nilToNull([fields objectAtIndex:ResponseReasonText]),	@"responseReasonText",
+							 nilToNull([fields objectAtIndex:AvsResultCode]),		@"avsResultCode",
+							 nilToNull([fields objectAtIndex:TransactionId]),		@"transactionId",
 							 nilToNull([fields objectAtIndex:CardCodeResponseCode]),	@"cardCode",
 							 nil
 							 ];
@@ -249,9 +249,9 @@
 								 @"$", @"encap_char",
 								 nil
 								 ];
-	
+
 	[post addEntriesFromDictionary:parameters];
-	
+
 	NSMutableArray* requestArray = [[NSMutableArray alloc] init];
 	NSString *curKey;
 	NSEnumerator *enumerator;
@@ -272,14 +272,14 @@
 	{
 		if ([[AuthorizeNetGateway CardCodeErrors] containsStringEqualTo:[results objectForKey:@"cardCode"]])
 			return [[BillingCvvResult messages] objectForKey:[results objectForKey:@"cardCode"]];
-		
+
 		if ([[AuthorizeNetGateway AvsErrors] containsStringEqualTo:[results objectForKey:@"avsResultCode"]])
 			return [[BillingAvsResult messages] objectForKey:[results objectForKey:@"avsResultCode"]];
 	}
-	
+
 	if ([results objectForKey:@"responseReasonText"]==nil)
 		return @"";
-	
+
 	NSString *s = [results objectForKey:@"responseReasonText"];
 	return [s substringToIndex:([s length] - 1)];
 }
@@ -298,33 +298,33 @@
 - (void) addInvoice:(NSMutableDictionary*)post options:(NSDictionary*)_options
 {
 	[post setObject:nilToNull([_options objectForKey:@"orderId"]) forKey:@"invoice_num"];
-	[post setObject:nilToNull([_options objectForKey:@"description"]) forKey:@"description"];	
+	[post setObject:nilToNull([_options objectForKey:@"description"]) forKey:@"description"];
 }
 
 - (void) addCreditCard:(NSMutableDictionary*)post creditcard:(BillingCreditCard*)creditcard
 {
 	[post setObject:nilToNull([creditcard number]) forKey:@"card_num"];
 	if ([creditcard has_verificationValue])
-		[post setObject:[creditcard verificationValue] forKey:@"card_code"];	
+		[post setObject:[creditcard verificationValue] forKey:@"card_code"];
 	[post setObject:nilToNull([self expdate:creditcard]) forKey:@"exp_date"];
-	[post setObject:nilToNull([creditcard firstName]) forKey:@"first_name"];	
+	[post setObject:nilToNull([creditcard firstName]) forKey:@"first_name"];
 	[post setObject:nilToNull([creditcard lastName]) forKey:@"last_name"];
 }
 
 - (void) addCustomerData:(NSMutableDictionary*)post options:(NSDictionary*)_options
 {
-	if ([_options objectForKey:@"email"]!=nil) 
+	if ([_options objectForKey:@"email"]!=nil)
 	{
-		[post setObject:nilToNull([_options objectForKey:@"email"]) forKey:@"email"];		
-		[post setObject:false forKey:@"email_customer"];			
+		[post setObject:nilToNull([_options objectForKey:@"email"]) forKey:@"email"];
+		[post setObject:false forKey:@"email_customer"];
 	}
-	if ([_options objectForKey:@"customer"]!=nil) 
+	if ([_options objectForKey:@"customer"]!=nil)
 	{
-		[post setObject:nilToNull([_options objectForKey:@"customer"]) forKey:@"cust_id"];			
+		[post setObject:nilToNull([_options objectForKey:@"customer"]) forKey:@"cust_id"];
 	}
-	if ([_options objectForKey:@"ip"]!=nil) 
+	if ([_options objectForKey:@"ip"]!=nil)
 	{
-		[post setObject:nilToNull([_options objectForKey:@"ip"]) forKey:@"customer_ip"];			
+		[post setObject:nilToNull([_options objectForKey:@"ip"]) forKey:@"customer_ip"];
 	}
 }
 
@@ -334,7 +334,7 @@
 - (void) addDuplicateWindow:(NSMutableDictionary*)post
 {
 	if ([AuthorizeNetGateway duplicateWindow]!=nil)
-		[post setObject:nilToNull([AuthorizeNetGateway duplicateWindow]) forKey:@"duplicate_window"];					
+		[post setObject:nilToNull([AuthorizeNetGateway duplicateWindow]) forKey:@"duplicate_window"];
 }
 
 - (void) addAddress:(NSMutableDictionary*)post options:(NSDictionary*)_options
@@ -342,19 +342,19 @@
 	NSDictionary *address = [_options objectForKey:@"billingAddress"];
 	if (address==nil)
 		address = [_options objectForKey:@"address"];
-	
+
 	if (address!=nil)
 	{
 		[post setObject:nilToNull([address objectForKey:@"address1"]) forKey:@"address"];
 		[post setObject:nilToNull([address objectForKey:@"company"]) forKey:@"company"];
-		[post setObject:nilToNull([address objectForKey:@"phone"]) forKey:@"phone"];		
-		[post setObject:nilToNull([address objectForKey:@"zip"]) forKey:@"zip"];		
-		[post setObject:nilToNull([address objectForKey:@"city"]) forKey:@"city"];		
-		[post setObject:nilToNull([address objectForKey:@"country"]) forKey:@"country"];		
+		[post setObject:nilToNull([address objectForKey:@"phone"]) forKey:@"phone"];
+		[post setObject:nilToNull([address objectForKey:@"zip"]) forKey:@"zip"];
+		[post setObject:nilToNull([address objectForKey:@"city"]) forKey:@"city"];
+		[post setObject:nilToNull([address objectForKey:@"country"]) forKey:@"country"];
 		if ([NSString isBlank:[address objectForKey:@"state"]])
 			[post setObject:@"n/a" forKey:@"state"];
 		else
-			[post setObject:nilToNull([address objectForKey:@"state"]) forKey:@"state"];			
+			[post setObject:nilToNull([address objectForKey:@"state"]) forKey:@"state"];
 	}
 }
 
@@ -368,7 +368,7 @@
 
 //
 // Class Methods
-// 
+//
 
 static NSMutableString* _AuthorizeNetGateway_testUrl = nil;
 static NSMutableString* _AuthorizeNetGateway_liveUrl = nil;
@@ -423,7 +423,7 @@ static NSMutableString* _AuthorizeNetGateway_duplicateWindow = nil;
 }
 + (void) setDuplicateWindow:(NSString *)val
 {
-	[_AuthorizeNetGateway_duplicateWindow setString:val];	
+	[_AuthorizeNetGateway_duplicateWindow setString:val];
 }
 
 static NSArray* _AuthorizeNetGateway_CardCodeErrors = nil;
@@ -453,11 +453,14 @@ static NSDictionary* _AuthorizeNetGateway_RecurringActions = nil;
 		_AuthorizeNetGateway_RecurringActions = [[NSDictionary dictionaryWithObjectsAndKeys:
 													@"ARBCreateSubscription", @"create",
 													@"ARBUpdateSubscription", @"update",
-													@"ARBCancelSubscription", @"cancel", 
+													@"ARBCancelSubscription", @"cancel",
 												 nil] retain];
 	return _AuthorizeNetGateway_RecurringActions;
 }
 
-
++ (NSString *) moneyFormat
+{
+	return @"cents";
+}
 
 @end

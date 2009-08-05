@@ -94,7 +94,7 @@
 
 - (void) addAmount:(NSMutableDictionary *)post money:(id)money
 {
-	[post setObject:nilToNull(money) forKey:@"amount"];
+	[post setObject:nilToNull([self amount:money]) forKey:@"amount"];
 }
 
 - (NSString *) expdate:(BillingCreditCard *)creditcard

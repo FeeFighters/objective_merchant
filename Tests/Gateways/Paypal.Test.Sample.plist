@@ -19,8 +19,8 @@
 		<key>number</key>
 		<string>4111111111111111</string>
 	</dict>
-	<key>username</key>
-	<string>username</string>
+	<key>login</key>
+	<string>login</string>
 	<key>password</key>
 	<string>password</string>
 	<key>signature</key>
