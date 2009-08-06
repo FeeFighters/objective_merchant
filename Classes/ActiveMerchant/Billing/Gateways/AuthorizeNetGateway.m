@@ -343,7 +343,7 @@
 	if (address==nil)
 		address = [_options objectForKey:@"address"];
 
-	if (address!=nil)
+	if (address!=nil && [address count]>0)
 	{
 		[post setObject:nilToNull([address objectForKey:@"address1"]) forKey:@"address"];
 		[post setObject:nilToNull([address objectForKey:@"company"]) forKey:@"company"];

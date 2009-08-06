@@ -20,7 +20,7 @@
 {
 	NSCalendar *curCalendar = [NSCalendar currentCalendar];
 	NSRange dayvals = [curCalendar rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:[NSDate date]];
-	return dayvals.location+dayvals.length-1;
+	return dayvals.length-1;
 }
 
 //
@@ -36,7 +36,7 @@
 - (bool) is_expired
 {
 	NSDate *today = [NSDate date];
-	NSDate *_exp = [self expiration];	
+	NSDate *_exp = [self expiration];
 	return ([today compare:_exp] != NSOrderedAscending);
 }
 
@@ -45,7 +45,7 @@
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init]  autorelease];
 	//[dateFormatter setDateFormat:@"%m/%d/%Y"];
 	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-	[dateFormatter setDateStyle:NSDateFormatterShortStyle];		
+	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 	NSDate *date = [dateFormatter dateFromString:[NSString stringWithFormat:@"%02d/%02d/%04d", [month intValue], [self monthDays], [year intValue]]];
 	return date;
 }
