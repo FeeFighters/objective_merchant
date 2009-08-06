@@ -458,9 +458,4 @@ static NSDictionary* _AuthorizeNetGateway_RecurringActions = nil;
 	return _AuthorizeNetGateway_RecurringActions;
 }
 
-+ (NSString *) moneyFormat
-{
-	return @"cents";
-}
-
 @end
