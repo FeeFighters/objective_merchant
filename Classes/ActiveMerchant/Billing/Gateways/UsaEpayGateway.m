@@ -45,11 +45,14 @@
 	return [super init:_options];
 }
 
+- (NSString*) endpointUrl
+{
+	return [self GatewayUrl];
+}
 - (NSString *) GatewayUrl
 {
 	if ([self isTest])
 		return [UsaEpayGateway SandboxUrl];
-
 	return [UsaEpayGateway Url];
 }
 

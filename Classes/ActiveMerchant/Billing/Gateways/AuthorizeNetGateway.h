@@ -45,6 +45,8 @@ typedef enum ResponseCodesEnum {
 	CardCodeResponseCode = 38
 } ResponseCodes;
 
+- (NSString*) endpointUrl;
+
 + (NSString *) testUrl;
 + (void) setTestUrl:(NSString *)url;
 + (NSString *) liveUrl;

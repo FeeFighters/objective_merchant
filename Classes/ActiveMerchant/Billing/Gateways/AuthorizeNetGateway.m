@@ -365,6 +365,14 @@
 }
 
 
+- (NSString*) endpointUrl
+{
+	if ([self isTest]) {
+		return [AuthorizeNetGateway testUrl];
+	}
+	return [AuthorizeNetGateway liveUrl];
+}
+
 
 //
 // Class Methods

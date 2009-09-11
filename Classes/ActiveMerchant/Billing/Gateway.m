@@ -27,10 +27,15 @@
 {
 	return [BillingGateway cardBrand:source];
 }
-		
+
 - (bool) isTest
 {
 	return ([BillingBase gatewayMode] == Test);
+}
+
+- (NSString*) endpointUrl
+{
+	return @"No Url For Generic Gateway";
 }
 
 
@@ -46,14 +51,14 @@
 - (NSString *)amount:(id)money
 {
 	if (money==nil) return nil;
-	
+
 	id cents = money;
 	if ([money respondsToSelector:@selector(cents)])
 		cents = [money performSelector:@selector(cents)];
-	
+
 	if ([[[self class] moneyFormat] isEqualToString:@"cents"])
 		return [NSString stringWithFormat:@"%d", [cents intValue]];
-	
+
 	return [NSString stringWithFormat:@"%.2f", [cents floatValue]/100.0];
 }
 
@@ -61,7 +66,7 @@
 {
 	if ([money respondsToSelector:@selector(currency)])
 		return [money performSelector:@selector(currency)];
-	
+
 	return [[self class] defaultCurrency];
 }
 
@@ -69,7 +74,7 @@
 {
 	if ([NSString isBlank:[self cardBrand:creditCard]])
 		return false;
-	
+
 	NSArray *debitCardTypes = [NSArray arrayWithObjects:@"switch", @"solo"];
 	NSString *curCardType;
 	NSEnumerator *enumerator = [debitCardTypes objectEnumerator];
@@ -141,7 +146,7 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 }
 + (void) setHomepageUrl:(NSString *)url
 {
-	_BillingGateway_homepageUrl = url;	
+	_BillingGateway_homepageUrl = url;
 }
 + (NSString *) displayName
 {
@@ -149,7 +154,7 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 }
 + (void) setDisplayName:(NSString *)dname
 {
-	_BillingGateway_displayName = dname;	
+	_BillingGateway_displayName = dname;
 }
 + (NSString *) applicationId
 {
@@ -157,7 +162,7 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 }
 + (void) setApplicationId:(NSString *)appid
 {
-	_BillingGateway_applicationId = appid;	
+	_BillingGateway_applicationId = appid;
 }
 
 
@@ -172,17 +177,17 @@ static NSString* _BillingGateway_applicationId = @"ActiveMerchant";
 	}
 	return false;
 }
-		
+
 + (NSString *) cardBrand:(id)source
 {
 	NSString *result;
-	if ([source respondsToSelector:@selector(brand)]) { 
-		result = [source performSelector:@selector(brand)]; 
+	if ([source respondsToSelector:@selector(brand)]) {
+		result = [source performSelector:@selector(brand)];
 	}
-		else { 
+		else {
 		result = [source type];
 	}
-		
+
 	return [NSString stringWithString:[result lowercaseString]];
 }
 
