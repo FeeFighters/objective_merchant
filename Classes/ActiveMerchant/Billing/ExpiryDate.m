@@ -43,10 +43,9 @@
 - (NSDate *) expiration
 {
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init]  autorelease];
-	//[dateFormatter setDateFormat:@"%m/%d/%Y"];
-	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
-	NSDate *date = [dateFormatter dateFromString:[NSString stringWithFormat:@"%02d/%02d/%04d", [month intValue], [self monthDays], [year intValue]]];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd"];
+	NSDate *date = [dateFormatter dateFromString:
+		[NSString stringWithFormat:@"%04d-%02d-%02d", [year intValue], [month intValue], [self monthDays]]];
 	return date;
 }
 
