@@ -138,19 +138,19 @@
 
 	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:CreditCardType" stringValue:[self creditCardType:[self cardBrand:creditcard]]]];
 	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:CreditCardNumber" stringValue:creditcard.number]];
-	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:ExpMonth" stringValue:[self format:[creditcard.month stringValue] option:@"twoDigits"]]];
-	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:ExpYear" stringValue:[self format:[creditcard.year stringValue] option:@"fourDigits"]]];
+	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:ExpMonth" stringValue:[self format:creditcard.month option:@"twoDigits"]]];
+	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:ExpYear" stringValue:[self format:creditcard.year option:@"fourDigits"]]];
 	[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:CVV2" stringValue:creditcard.verificationValue]];
 
 	if (	[[self cardBrand:creditcard] isEqualToString:@"switch"] ||
 			[[self cardBrand:creditcard] isEqualToString:@"solo"] )
 	{
 		if (![NSString isBlank:[creditcard.startMonth stringValue]])
-			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:StartMonth" stringValue:[self format:[creditcard.startMonth stringValue] option:@"twoDigits"]]];
+			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:StartMonth" stringValue:[self format:creditcard.startMonth option:@"twoDigits"]]];
 		if (![NSString isBlank:[creditcard.startYear stringValue]])
-			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:StartYear" stringValue:[self format:[creditcard.startYear stringValue] option:@"fourDigits"]]];
+			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:StartYear" stringValue:[self format:creditcard.startYear option:@"fourDigits"]]];
 		if (![NSString isBlank:[creditcard.issueNumber stringValue]])
-			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:IssueNumber" stringValue:[self format:[creditcard.issueNumber stringValue] option:@"twoDigits"]]];
+			[xml_n2_CreditCard addChild:[GDataXMLElement elementWithName:@"n2:IssueNumber" stringValue:[self format:creditcard.issueNumber option:@"twoDigits"]]];
 	}
 
 	GDataXMLElement* xml_n2_CardOwner = [GDataXMLElement elementWithName:@"n2:CardOwner"];

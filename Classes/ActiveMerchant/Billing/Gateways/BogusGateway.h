@@ -22,7 +22,7 @@
 
 - (BillingResponse *) authorize:(id)money creditcard:(BillingCreditCard*)creditcard options:(NSDictionary*)options;
 - (BillingResponse *) purchase:(id)money creditcard:(BillingCreditCard*)creditcard options:(NSDictionary*)options;
-- (BillingResponse *) capture:(id)money identification:(NSString*)identification options:(NSDictionary*)options;
+- (BillingResponse *) capture:(id)money authorization:(NSString*)authorization options:(NSDictionary*)options;
 - (BillingResponse *) credit:(id)money identification:(NSString*)identification options:(NSDictionary*)options;
 - (BillingResponse *) store:(BillingCreditCard*)creditcard options:(NSDictionary*)options;
 - (BillingResponse *) unstore:(NSString*)identification options:(NSDictionary*)options;

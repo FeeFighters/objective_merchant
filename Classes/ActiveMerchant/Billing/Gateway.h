@@ -28,7 +28,6 @@
 - (id) init:(NSDictionary *)options;
 - (NSString *) cardBrand:(id)source;
 - (bool) isTest;
-- (NSString*) endpointUrl;
 
 //
 // "Private" methods
@@ -60,3 +59,4 @@
 + (NSString *) cardBrand:(id)source;
 
 @end
+

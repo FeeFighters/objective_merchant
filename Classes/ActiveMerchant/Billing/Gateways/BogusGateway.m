@@ -64,13 +64,13 @@ static NSString* _CAPTURE_ERROR_MESSAGE = @"Bogus Gateway: Use authorization num
 	return nil;
 }
 
-- (BillingResponse *) capture:(id)money identification:(NSString*)identification options:(NSDictionary*)options
+- (BillingResponse *) capture:(id)money authorization:(NSString*)authorization options:(NSDictionary*)options
 {
-	if ([identification isEqualToString:@"1"]) {
+	if ([authorization isEqualToString:@"1"]) {
 		[NSException raise:@"Error"	format:_CAPTURE_ERROR_MESSAGE];
 		return nil;		
 	}
-	else if ([identification isEqualToString:@"2"])
+	else if ([authorization isEqualToString:@"2"])
 		return [[BillingResponse alloc] init:false 
 									 message:_FAILURE_MESSAGE 
 									  params:[NSDictionary dictionaryWithObject:money forKey:@"paidAmount"]
@@ -206,5 +206,12 @@ static NSString* _BogusGateway_displayName = nil;
 	_BogusGateway_displayName = dname;	
 }
 
+- (NSString*) endpointUrl
+{
+	if ([self isTest]) {
+		return @"Bogus Test URL";
+	}
+	return @"Bogus Live URL";
+}
 
 @end
