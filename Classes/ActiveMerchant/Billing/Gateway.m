@@ -45,7 +45,7 @@
 
 - (NSString*) name
 {
-	return [[self class] className];
+	return [[self class] description];
 }
 
 - (NSString *)amount:(id)money
